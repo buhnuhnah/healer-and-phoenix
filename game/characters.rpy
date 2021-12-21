@@ -1,0 +1,5 @@
+define character.c = Character("Catalina", voice_tag="catalina", side_image="avatar/avatar_catalina.png")
+define character.m = Character("Max", voice_tag="max", side_image="avatar/avatar_max.png")
+define character.v = Character("Valencia", voice_tag="valencia", side_image="avatar/avatar_valencia.png")
+define character.e = Character("Edmundo", voice_tag="edmundo", side_image="avatar/avatar_edmundo.png")
+define character.d = Character("Diedriech", voice_tag="diedriech", side_image="avatar/avatar_diedriech.png")
