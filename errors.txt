@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-The label start is defined twice, at
-  File "game/chapters/ch1_s1-7.rpy", line 1 and
-  File "game/script.rpyc", line 1.
+File "game/chapters/ch1_s13-16.rpy", line 305: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a ' at the end of the first line.)
+        $ cmood = 'surprised
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Tue Dec 21 11:16:15 2021
+Sun Jan  9 10:31:09 2022

@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/chapters/ch1_s13-16.rpy", line 255, in script
+    with none
+  File "game/chapters/ch1_s13-16.rpy", line 255, in <module>
+    with none
+NameError: name 'none' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/chapters/ch1_s13-16.rpy", line 255, in script
+    with none
+  File "renpy/ast.py", line 1390, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "renpy/python.py", line 2249, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2242, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/chapters/ch1_s13-16.rpy", line 255, in <module>
+    with none
+NameError: name 'none' is not defined
+
+Windows-10-10.0.22000
+Ren'Py 7.4.4.1439
+Healer and Phoenix 1.2
+Sun Jan  9 10:47:56 2022
