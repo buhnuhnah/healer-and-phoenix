@@ -96,7 +96,7 @@ label ch1_s13_diedriech:
     d "Nothing. I'm simply happy you are you, Catalina."
     c "Huh?!"
     d "You're the most wonderful person I know. Just being around you makes me happy."
-    "What?! But we bicker all the time. Wait, this is a dream. Do- do I want Diedriech to talk to me like this?."
+    "What?! But we bicker all the time. Wait, this is a dream. Do- do I want Diedriech to talk to me like this?"
     $ cmood = 'sad'
     c "..."
     $ dmood = 'surprised'
@@ -104,7 +104,7 @@ label ch1_s13_diedriech:
     "And that makes me so sad. I really wish things were different between us..."
     $ dmood = 'sad'
     d "Catalina, why are you crying?"
-    c "I... don't know..."
+    c "I... I don't know..."
     "That's a lie. I've seen Diedriech after a year, and he came running to me without hesitation."
     "Now the pent-up feelings I have towards him will explode in my face again."
     "I hope he goes back home soon, then I won't have to face them."

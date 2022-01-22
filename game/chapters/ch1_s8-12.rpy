@@ -8,7 +8,7 @@ label ch1_s8:
     "It's the middle of the night! Is it okay to wake up Diedriech now?"
     "But... My patient doesn't exactly have much time left and if Diedriech could portal to Zalila, it would only take a few hours."
     "I suspect we don't have enough time to wait until the more call-appropriate hours of morning."
-    show catalina at left with move
+    show catalina at flipRight with move
     "I approach the large standing mirror with its complicated ornaments that hide the magical formulas for long-distance communication."
     c "Here goes nothing..."
     "I place my hand on the mirror's surface and think hard about Diedriech - his appearance when I last saw him, his location."
@@ -44,8 +44,7 @@ label ch1_s8:
     $ cmood = 'sad'
     $ vmood = 'happy'
     scene bg waiting night
-    show catalina at left
-    show valencia at offscreenright
+    show catalina at flipRight
     with fade
 
     "He takes his hand away from the mirror."
@@ -253,11 +252,7 @@ label ch1_s10:
     d "Our combined power should be enough. I hope."
     "I share the sentiment."
 
-    # MINIGAME
-    scene black with dissolve
-    " CH 1 SCENE 10 MINIGAME GOES HERE"
-
-    jump ch1_s11
+    jump sixth_minigame
 
 label ch1_s11:
     $ dmood = 'sad'

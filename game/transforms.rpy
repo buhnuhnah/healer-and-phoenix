@@ -50,3 +50,6 @@ transform flipRight:
     xzoom -1.0 xalign 1.0 yalign 1.0
 transform right:
     xzoom 1.0 xalign 1.0 yalign 1.0
+
+transform trueCenter:
+    xalign 0.5 yalign 0.5
