@@ -87,8 +87,9 @@ label ch1_s13_diedriech:
     c "You must really be sick. Something's wrong with your head."
     $ dmood = 'surprised'
     show diedriech
-    pause 1
+    pause 0.5
     $ dmood = 'happy'
+    show diedriech
     "He stares at me surprised, then starts laughing as if I said the funniest thing in the world."
     $ cmood = 'surprised'
     c "Diedriech, what's wrong with you...?!"
@@ -164,6 +165,7 @@ label ch1_s14:
     if ch1_dream == 'diedriech':
         $ cmood = 'shy'
         $ dmood ='shy'
+        show diedriech
         "I blush, remembering the dream with him in it. Diedriech avoids my gaze, red in the face himself. Wait, what's wrong with him?"
         "I open my mouth to ask him again if he has a fever, but think better of it. If he's sick he'll tell me himself."
     $ dmood = 'neutral'

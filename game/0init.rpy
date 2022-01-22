@@ -4,3 +4,6 @@ init python:
          d["chapter"] = chapter_no
          d["name"] = player_name
     config.save_json_callbacks = [save_extra_data]
+
+    config.searchpath.extend(["game/audio", "game/images/backgrounds"])
+    centerTextbox = False

@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -94,21 +94,33 @@ style frame:
 ## and id "window" to apply style properties.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
+style centeredTextbox:
+    background Image("gui/textbox/centeredTextbox.png")
 
 screen say(who, what):
     style_prefix "say"
 
     window:
-        id "window"
+        if centerTextbox == True:
+            style "centeredTextbox"
 
-        if who is not None:
+            if who is not None:
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who" color "#cf5d2b" size 24 font "gui/fonts/OpenSans-SemiBoldItalic.ttf" underline True xpos 406 ypos 450
+            text what id "what" color "#383838" size 30 font "gui/fonts/OpenSans-SemiBold.ttf" xmaximum 1116 xpos 406 ypos 500
+        else:
+            id "window"
+            style "window"
 
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who" color "#cf5d2b" size 24 font "gui/fonts/OpenSans-SemiBoldItalic.ttf" underline True xpos 406 ypos 57
+            if who is not None:
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who" color "#cf5d2b" size 24 font "gui/fonts/OpenSans-SemiBoldItalic.ttf" underline True xpos 406 ypos 57
 
-        text what id "what" color "#383838" size 30 font "gui/fonts/OpenSans-SemiBold.ttf" xmaximum 1116 xpos 406 ypos 105
+            text what id "what" color "#383838" size 30 font "gui/fonts/OpenSans-SemiBold.ttf" xmaximum 1116 xpos 406 ypos 105
 
 
 ## Make the namebox available for styling through the Character object.
@@ -182,7 +194,12 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            button:
+                xysize (1562, 99)
+                background "gui/choice/choice.png"
+
+                text i.caption font "gui/fonts/OpenSans-SemiBold.ttf" yalign 0.5 color "000000"
+                action i.action
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -775,7 +792,7 @@ screen preferences():
         add "gui/settings/After Choices.png" xpos 899 ypos 425
         add "gui/settings/Text Speed.png" xpos 1453 ypos 418
         add "gui/settings/Transitions.png" xpos 358 ypos 673
-        add "gui/settings/Skip.png" xpos 956 ypos 674 
+        add "gui/settings/Skip.png" xpos 956 ypos 674
         add "gui/settings/Auto Text Speed.png" xpos 1416 ypos 671
 
         for im, x, y, act in buttons:

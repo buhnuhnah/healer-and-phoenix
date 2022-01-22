@@ -1,8 +1,11 @@
 label start:
+    $ centerTextbox = False;
     scene bg wasteland with fade
 
+    voice "voice/start_48423cac.ogg"
     "The Oracle" "Once again the world is destroyed, ravaged by evil magic."
     "The Oracle" "How many times do you have to try, Phoenix, before you understand you can't save the world alone?"
+    show phoenix at center with dissolve
     "Phoenix" "..."
     "Phoenix" "The gods made me the protector of this world."
     "The Oracle" "And you thought you'd have to bear this burden alone."
@@ -11,8 +14,7 @@ label start:
     "Phoenix" "I can't heal the infected animals. I need the help of a healer!"
     "Phoenix" "Oracle-"
     "The Oracle" "Once again, I'll send you back in time to a location in which a Healer will find you."
-    "The Oracle" "But I too, am tired."
-    "The Oracle" "I grow weary as my life force dwindles, thus I cannot bear the burden of using this kind of powerful magic anymore."
+    "The Oracle" "But I too, am tired. I grow weary as my life force dwindles, thus I cannot bear the burden of using this kind of powerful magic anymore."
     "The Oracle" "This will be the last time I can help you this way, I am afraid I will have to use your own life force to do so."
     "The Oracle" "You will arrive hurt and dying."
     "Phoenix" "I understand, thank you for your help."
@@ -22,6 +24,7 @@ label start:
 
 label ch1_s2:
     scene cg max with fade
+    pause 0.75
     m "Healer! Graciella is sick! Please, help her!"
     "I look up from the test I was doing on the microscope."
     "I see my long-term customer, Maximiano with his pet purrbear, Graciella in his arms."
@@ -124,7 +127,7 @@ label ch1_s2_2:
 
     # CHECK THIS LATER
     show valencia at leftish
-    show catalina at right
+    show catalina at flipRight
     with move
     $ maxwithG = True
     pause 0.5
@@ -135,7 +138,7 @@ label ch1_s2_2:
 
 label ch1_s2_3:
     $ mmood = 'surprised'
-    show catalina at leftish with move
+    show catalina at flipLeftish with move
     "I approach Maximiano and before he can stop me from hugging him, I embrace him tightly."
     $ mmood = 'shy'
     m "Whoa!"
@@ -144,7 +147,7 @@ label ch1_s2_3:
     "Though I'm not doing it because I'm a healer. I simply wanted to hug Maximiano. He's just so cute!"
     m "Ahhhh....!"
     "Like now, when he's having a meltdown, waving his arms in the air, not knowing where to put them."
-    show catalina at center with move
+    show catalina at flipCenter with move
     "I let him go before his brain explodes."
     m "Miss Catalina..."
     "He has such pretty green eyes."
@@ -152,11 +155,13 @@ label ch1_s2_3:
     v "E-hem."
 
     show valencia at leftish
-    show catalina at right
+    show catalina at flipRightish
     with move
     $ maxwithG = True
     pause 0.5
-    show valencia at center with move
+    show valencia at center
+    show catalina at flipRight
+    with move
 
     "Valencia approaches us with Graciella in her arms. She hands the pet over to Maximiano."
     jump ch1_s2_5
@@ -168,9 +173,8 @@ label ch1_s2_4:
     "Maybe I shouldn't do it. It might feel too invasive to others if I suddenly embrace them."
     "As much as I like hugging, I need consent to do it."
 
-    # CHECK THIS LATER
     show valencia at leftish
-    show catalina at right
+    show catalina at flipRight
     with move
     $ maxwithG = True
     pause 0.5
@@ -184,6 +188,7 @@ label ch1_s2_5:
     v "The payment?"
     $ mmood = 'shy'
     m "Ah, right."
+    show max at offscreenleft with move
     "Maximiano pays for our service, then exits the room."
     if hugMax:
         v "He's pretty cute, isn't he?"
@@ -200,12 +205,164 @@ label ch1_s2_5:
     jump ch1_s3
 
 label ch1_s3:
-    "INSERT CH 1 SCENE 3"
-    jump ch1_s4
+    $ cmood = 'happy'
+    $ vmood = 'neutral'
+    scene bg waiting day
+    show catalina at flipCenter
+    show valencia at right
+    with fade
+
+    c "Now, who's next?"
+    "I step into the waiting room of the clinic with a bright smile on my face."
+    "I notice several pets with their owners, a colorful bunch waiting for me to solve their problems."
+    "Which one should I chose?"
+    $ menuset = set()
+menu:
+    set menuset
+    "Wonsh":
+        jump ch1_s3_1
+    "Flockto":
+        jump ch1_s3_2
+    "Lumerin":
+        jump ch1_s3_3
+
+
+label ch1_s3_1:
+    $ menuset.add("Wonsh")
+    "The navy-colored wonsh with the green underbelly is truly a beautiful creature."
+    "However, the red light in its head is dim, suggesting it must be in immense pain."
+    c "Can the owner of the wonsh please come in?"
+    "Wonsh's Owner" "Thank you, Healer!"
+    show bg vet day with dissolve
+    "The wonsh's owner enters the doctor's room, carrying his pet in his arms."
+    "This is concerning as the species normally slithers on its own."
+    "Wonsh are usually quite independent and don't want to be carried."
+    "I share a worried look with Valencia."
+    "The man sets his pet on the surgery table."
+    c "Before I take a look, could you tell me what happened?"
+    "Wonsh's Owner" "My Mateo and I were playing catch in the fields."
+    "Wonsh's Owner" "Suddenly Mateo hissed in pain and now he doesn't want to move on his own."
+    c "Hmm..."
+    "Time to put the wonsh under inspection then!"
+
+    "INSERT MINIGAME HERE"
+
+    c "There, all done! Just don't let Mateo slither for a few days, so the wound can heal properly."
+    "Wonsh's Owner" "Thank you, Miss Catalina!"
+    "The wonsh's owner pays for our services and leaves the doctor's room with the happy pet in arms."
+    $ vmood = 'happy'
+    v "A job well done!"
+
+    if len(menuset) > 3:
+        jump ch1_s4
+    show bg waiting day with dissolve
+    $ cmood = 'neutral'
+    $ vmood = 'neutral'
+    "Now whom should I chose next?"
+menu:
+    set menuset
+    "Wonsh":
+        jump ch1_s3_1
+    "Flockto":
+        jump ch1_s3_2
+    "Lumerin":
+        jump ch1_s3_3
+jump ch1_s4
+
+label ch1_s3_2:
+    $ menuset.add("Flockto")
+    "The flockto is a wonderful animal with its white spotted skin and colorful tentacles."
+    "Most flocktos are usually extremely colorful, so it's quite amazing to see an albino one."
+    $ cmood = 'worried'
+    "However, I cannot truly admire its beauty when it's so clearly hurt"
+    c "Can the flockto's owner please come in?"
+    "Flockto's Owner" "Finally!"
+    "The flockto's owner looks impatient as she enters the room, her pet floating in the air behind."
+    show bg vet day with dissolve
+    c "Tell me what happened."
+    "Flockto's Owner" "Leonardo refuses to eat. Please do something about it."
+    $ vmood = 'worried'
+    "I hold back a sigh. She doesn't exactly give much information. I will have to work with it regardless."
+    "The owner can be rude all she wants but what's important is to save the pet from suffering."
+
+    "INSERT MINIGAME HERE"
+
+    $ cmood = 'neutral'
+    $ vmood = 'neutral'
+    "Flockto's Owner" "Are they healed?"
+    c "I took care of the worst of it, but please apply this medicine to Leonardo every day for the next four days."
+    "Flockto's Owner" "If I must."
+    c "And please don't feed the pet chocolate."
+    "Flockto's Owner" "..."
+    "The flockto's owner pays us and leaves the room without a goodbye."
+    $ vmood = 'sad'
+    v "Some people are really irresponsible."
+    $ cmood = 'sad'
+    c "I have a feeling this isn't the last time we are going to see this flockto and its owner."
+
+    if len(menuset) > 3:
+        jump ch1_s4
+    show bg waiting day with dissolve
+    "I sigh and walk out of the doctor's room."
+    $ cmood = 'neutral'
+    $ vmood = 'neutral'
+    "Now whom should I chose next?"
+menu:
+    set menuset
+    "Wonsh":
+        jump ch1_s3_1
+    "Flockto":
+        jump ch1_s3_2
+    "Lumerin":
+        jump ch1_s3_3
+jump ch1_s4
+
+label ch1_s3_3:
+    $ menuset.add("Lemurin")
+    "The lemurin with bright orange fur quivers in pain."
+    $ cmood = 'worried'
+    $ vmood = 'worried'
+    "Lemurin's Owner" "Please help us, Healer!"
+    c "On it!"
+    show bg vet day with dissolve
+    "The lemurin walks slowly and reluctantly behind its owner to the doctor's room."
+    "I can feel its pain just by looking at it."
+    c "What happened?"
+    "Lemurin's Owner" "Emilia was playing with another lemurin of mine in a tree, when she suddenly fell from the branch."
+    "Lemurin's Owner" "Ever since then, she's been in a lot of pain and won't let even me touch her."
+    c "Alright. I'll see what I can do."
+
+    "INSERT MINIGAME HERE"
+
+    $ cmood = 'happy'
+    $ vmood = 'neutral'
+    c "All done!"
+    "Lemurin's Owner" "Thank you, oh thank you, healer!"
+    "The lemurin's owner pays for the services and leaves, thanking us multiple times."
+    $ vmood = 'happy'
+    v "Excellent job!"
+    c "Well, thank you!"
+
+    if len(menuset) > 3:
+        jump ch1_s4
+    $ cmood = 'neutral'
+    $ vmood = 'neutral'
+    show bg waiting day with dissolve
+    "I leave for the waiting room to see who's up next"
+menu:
+    set menuset
+    "Wonsh":
+        jump ch1_s3_1
+    "Flockto":
+        jump ch1_s3_2
+    "Lumerin":
+        jump ch1_s3_3
+jump ch1_s4
 
 label ch1_s4:
     $ cmood = 'neutral'
     $ valencia = 'neutral'
+    "With no more pets to heal, Valencia and I take a break for lunch."
 
     scene bg vet sunset
     show catalina at left
@@ -226,7 +383,10 @@ label ch1_s4:
         "I can't help the bright smile that appears on my face. I love my job and it brings me a lot of satisfaction."
         v "Yes, and no major surgeries-"
         "Our happiness is interrupted by loud banging on the entrance door."
+        $ cmood = 'surprised'
+        $ vmood = 'surprised'
         "It's past opening hours, but that's not the first time we find ourselves in this situation."
+        $ cmood = 'neutral'
         "I can't say I'm surprised. Everything has gone too smoothly today."
     else:
         c "Today could have been better, but at least we made no major mistakes."
@@ -241,9 +401,10 @@ label ch1_s4:
     $ vmood = 'worried'
     v "Oh no..."
 
-    scene bg waiting sunset with fade
+    scene bg waiting sunset
     show catalina at offscreenright
     show valencia at offscreenright
+    with fade
     show valencia at right
     show catalina at flipCenter
     with move
@@ -330,6 +491,7 @@ label ch1_s4_4:
     c "How long ago did you find the burning bird?"
     "Lumberjack" "Fifteen minutes ago! As soon as we saw the creature, we decided to go to you for help!"
     $ cmood = 'happy'
+    show catalina happy
     c "Thank you for your faith in me."
     "Lumberjack" "Of course, you're known as the best animal healer in town!"
     "I nod, happy that my fame is spreading. Though with great fame comes great responsibility, as I think I'm about to discover..."
@@ -355,16 +517,21 @@ label ch1_s4_5:
     jump ch1_s5
 
 label ch1_s5:
-    $ vmood = 'worried'
-    $ cmood = 'worried'
     scene bg road sunset
     show catalina at left
     show valencia at right
     with fade
 
+    $ vmood = 'worried'
+    $ cmood = 'worried'
+    show valencia
+    show catalina
     "We follow the man on the road leading out of town and soon we enter the forest. The trees rustle and move in the wind gently."
     "Nothing seems to indicate something bad has happened here."
     v "So... what do you think it is?"
+    show valencia at rightish
+    show catalina at leftish
+    with move
     "Valencia takes me by the arm and we walk some distance behind the lumberjack."
     "He looks over his shoulder, but shrugs and keeps walking when he sees we're still following."
     c "I asked him some questions while you were preparing."
@@ -410,8 +577,12 @@ label ch1_s5:
     "The lumberjack stops in front of us, and gestures to the left."
     "Lumberjack" "We need to get off this path here! Come on, ladies!"
     v "We're coming!"
+    show valencia at right
+    show catalina at rightish
+    with move
     "We leave the road and enter the forest proper. After walking for a few minutes we hear the worried voices of multiple people."
     "A few steps more and we see a clearing with lumberjacks gathered around a campfire."
+    show catalina at flipRightish with dissolve
     "Lumberjack" "The healer is here!"
     $ cmood = 'neutral'
     $ vmood = 'neutral'
@@ -422,6 +593,10 @@ label ch1_s5:
 label ch1_s6:
     scene cg phoenix with fade
     $ cmood = 'surprised'
+    $ centerTextbox = True
+    pause 0.5
+    voice "voice/ch1_s6_cat1.ogg"
+    c "By the gods!"
     "Shock paralyses me when I see the phoenix lying in the middle of the foliage."
     "Power is radiating off the creature -  a magnificent, fearsomely beautiful being."
     "I force myself to approach, knowing that even when hurt it could so easily kill me."
@@ -429,7 +604,7 @@ label ch1_s6:
     "When I see the extent of the phoenix' injuries, I wonder how it's still alive. It must be in a lot of pain."
     "Numerous cuts all around its body, feathers plucked out. It lies there unconscious."
     "There is also some sort of magic attached to its body. It's floating around the wounds, a dark shadow."
-    "Curiosity overwhelmed me, I put my finger into the swirling mass."
+    "Curiosity overwhelming me, I put my finger into the swirling mass."
     $ cmood = 'pain'
     c "Ow!"
     "Rather than a burn, it feels like a bite. But when I examine my hand there is no sign of injury. Did it bite my magical aura directly?"
@@ -449,6 +624,7 @@ label ch1_s6:
     show catalina at left
     show valencia at right
     with fade
+    $ centerTextbox = False
     "The lumberjacks look scared, but the man who walked us here and another approach."
     "Lumberjack" "Understood. We'll help."
     "I direct the two men on how to grab the bird properly. In no time it's on our stretcher and we set it to floating again."
@@ -457,12 +633,12 @@ label ch1_s6:
     jump ch1_s7
 
 label ch1_s7:
-    $ cmood = 'worried'
-    $ vmood = 'neutral'
     scene bg vet sunset
     show valencia at right
     show catalina at left
     with fade
+    $ cmood = 'worried'
+    $ vmood = 'neutral'
 
     c "Let's lay the phoenix on the table."
     v "Yes!"
@@ -489,7 +665,7 @@ label ch1_s7:
     c "No."
     "I answer quickly. I don't want to call on that person for any reason."
     $ cmood = 'neutral'
-    c "He's in Gerla anyway. Do you think he would come to Selia just because I need something?"
+    c "He's in Gerla anyway. Do you think he would come to Girasol just because I need something?"
     $ vmood = 'happy'
     v "Yes, he will."
     $ cmood = 'surprised'
@@ -509,7 +685,7 @@ label ch1_s7:
     $ cmood = 'neutral'
     "I can't understand why he would be."
     "Diedriech and I have been rivals throughout all of our university years. We were like fire and water, always bickering."
-    "Somehow the Garlan never left me alone, always coming to me to tease me about this and that."
+    "Somehow the Gerlan never left me alone, always coming to me to tease me about this and that."
     "When university ended, I moved back to my parents' hometown of Zalila."
     "Diedriech returned to Gerla to take over his parents' healing clinic for mythical creatures."
     "It's been a year since I last heard from him."

@@ -8,6 +8,7 @@ label ch1_s8:
     "It's the middle of the night! Is it okay to wake up Diedriech now?"
     "But... My patient doesn't exactly have much time left and if Diedriech could portal to Zalila, it would only take a few hours."
     "I suspect we don't have enough time to wait until the more call-appropriate hours of morning."
+    show catalina at left with move
     "I approach the large standing mirror with its complicated ornaments that hide the magical formulas for long-distance communication."
     c "Here goes nothing..."
     "I place my hand on the mirror's surface and think hard about Diedriech - his appearance when I last saw him, his location."
@@ -15,6 +16,7 @@ label ch1_s8:
     "I wait for a bit ... hoping he'll answer."
 
     scene cg diedriech with fade
+    pause 0.5
 
     "When I finally see his face, those handsome features I haven't seen in so many months, I feel a wave of relief hit me."
     "I will be able to save the phoenix. I..."
@@ -31,17 +33,18 @@ label ch1_s8:
     "Wait? He agreed so easily?"
     c "Ah! But I didn't even explain what the problem is!"
     "Diedriech smiles softly at me."
-    "Diedrich Happy" "I know you, Catalina. You wouldn't ask me for help if it wasn't important."
+    voice "voice/ch1_s8_die1.ogg"
+    d "I know you, Catalina. You wouldn't ask me for help if it wasn't important."
     d "Don't worry about anything. I'll help you. Get some rest while you wait for me to arrive."
     c "O-okay..."
     d "And please for the love of all the gods, don't cry. It breaks my heart to see you like this."
     c "S-sorry."
     d "See you in four hours."
 
-    $ cmood = 'neutral'
+    $ cmood = 'sad'
     $ vmood = 'happy'
     scene bg waiting night
-    show catalina at flipCenter
+    show catalina at left
     show valencia at offscreenright
     with fade
 
@@ -49,9 +52,7 @@ label ch1_s8:
     "The familiar sight of Diedriech's face disappears and one again I'm alone in the waiting room."
     "He agreed to help me, without even knowing why I called."
     "I couldn't help but feel shocked."
-    show valencia at right
-    show catalina at left
-    with dissolve
+    show valencia at flipCenter with dissolve
     v "Told you!"
     "I hear Valencia's voice and turn around to see her standing in the door to the doctor's room."
     c "Yeah..."
@@ -163,9 +164,9 @@ label ch1_s10:
     $ cmood = 'neutral'
 
     scene bg vet day
-    show valencia at right
+    show valencia at center
     show diedriech at flipLeft
-    show catalina at center
+    show catalina at flipRight
     with fade
     v "Diedriech is here. We need to get on with the healing."
     "I look at them, confused for a moment."
@@ -176,20 +177,26 @@ label ch1_s10:
     "He nods to the patient as he stands there in all of his pretentious glory."
     "Oh, how the man annoys me by just being in the same room."
     $ cmood = 'angry'
-    show catalina at flipCenter with dissolve
     c "No, it's clearly a dragon."
     " I never did know why he gets on my nerves so much."
     $ vmood = 'worried'
+    $ dmood = 'surprised'
+    show valencia
+    show diedriech
     "He looks at me exasperated. Valencia sighs."
     v "There they go again..."
-    $ dmood = 'surprised'
     d "It's a phoenix?"
     "For the love of all the gods..."
     $ dmood = 'neutral'
     c "Yes, Mister Obvious. It's a phoenix."
     "If only he was half as smart as he was handsome."
     "Diedriech moves to the surgery table to examine our patient, mumbling under his breath."
-    d "I never thought I would see a phoenix... look at his feather structure, what a wonderful specimen... and the fact that it's on fire and not burning anything..."
+    voice "voice/ch1_s10_die1.ogg"
+    d "I never thought I would see a phoenix..."
+    voice "voice/ch1_s10_die2.ogg"
+    d "Look at his feather structure, what a wonderful specimen..."
+    voice "voice/ch1_s10_die3.ogg"
+    d "And the fact that it's on fire and not burning anything..."
     "Seeing him examine Edmundo with such curiosity, even though the phoenix is lying there dying, pisses me off even more."
     c "This is no time for looking at it as if you're in a zoo!"
     c "The patient is hurt! Can't you see the wounds?! And the dark energy swirling around?"
@@ -202,7 +209,10 @@ label ch1_s10:
     c "Alright team, let's go."
     "I convey everything we've discovered and Diedriech listens and gives his own observations."
     $ dmood = 'neutral'
-    d "It seems to me if we apply enough magical power at once, we should be able to overwhelm the magic that's eating at its wounds."
+    voice "voice/ch1_s10_die4.ogg"
+    d "It seems to me if we apply enough magical power at once..."
+    voice "voice/ch1_s10_die5.ogg"
+    d "We should be able to overwhelm the magic that's eating at its wounds."
     d "The alternative is of course unravelling the magic thread by thread."
     $ cmood = 'neutral'
     c "Tried that. It doesn't work. The pattern is too complicated and I can't find either the end nor the beginning."
@@ -228,7 +238,7 @@ label ch1_s10:
     $ cmood = 'angry'
     $ vmood = 'worried'
     c "I did! But I don't get why you're shouting at me all of a sudden!"
-    "Diedriech mumbles something under his breath. I recognize some of the words as Garlan curses."
+    "Diedriech mumbles something under his breath. I recognize some of the words as Gerlan curses."
     d "...never gets anything..."
     c "I beg your pardon?!"
     v "Please calm down..."
@@ -255,19 +265,20 @@ label ch1_s11:
     $ cmood = 'sad'
 
     scene bg vet sunset
-    show diedriech at flipLeft
-    show valencia at right
-    show catalina at flipCenter
     with fade
 
     "It takes us the whole day to heal the phoenix. Before I realize it, the sun is setting once again."
     "We used all of our magical power but the operation is a success. I feel like I could collapse at any moment."
     "I look around. Valencia is sitting on the floor, sleeping."
     "She couldn't keep up until the end so I told her to rest, but she didn't leave my side."
+    show diedriech at flipLeft
+    show catalina at flipCenter
+    with dissolve
     "Diedriech looks exhausted."
     c "How many hours since last you slept?"
     d "Feels like the last time I slept was in the previous century."
     $ cmood = 'happy'
+    show catalina happy
     c "Just like old times, right?"
     $ dmood = 'happy'
     d "Just like old times."
@@ -310,18 +321,21 @@ label ch1_s12:
     c "It's okay."
     $ dmood = 'angry'
     d "It's not okay."
-    show diedriech at rightish
+    show diedriech at rightish with move
     $ cmood = 'surprised'
+    show catalina
     "Diedriech steps in right behind me, putting a hand on my shoulder."
     "I stare at him, surprised to see that he is giving Maximiano a disapproving look."
     $ mmood = 'angry'
     $ gmood = 'neutral'
+    show max
     "But when I look at Maximiano again... his expression mirrors Diedriech's. I thought he would be intimidated by my rival."
     "Many people were back in our school years. Yet, Maximiano doesn't seem shy at all."
     "How peculiar."
     $ cmood = 'neutral'
     d "Give me the pet, I will take care of it."
     $ gmood = 'angry'
+    show max
     "Graciella hisses when she sees Diedriech's outstretched hands."
     m "No! Graciella doesn't like just anybody to touch her!"
     d "Did you just call me 'just anybody'?! For your information I am-"
@@ -405,18 +419,21 @@ label ch1_s12_3:
     m "What did you call my Princess?!"
     $ dmood = 'happy'
     $ cmood = 'happy'
+    show diedriech happy talk
     "Diedriech laughs at Maximiano admitting he treats his pet like royalty. I can't help the smile that appears on my face. So cute."
     $ vmood = 'happy'
     $ cmood = 'neutral'
+    show diedriech
     v "Graciella needs this injection."
     "Valencia passes the syringe along to Diedriech and he gives the injection."
     $ vmood = 'neutral'
     "Graciella makes unhappy sounds throughout the process, but at least that distracts her from the jab."
     $ gmood = 'sad'
-    $ maxwithG = True
     show diedriech at leftish
     show catalina at flipRightish
     with move
+    pause 0.5
+    $ maxwithG = True
     "Before long, she's released from the doctor's \"clutches\" and jumps into Maximiano's arms."
     m "Thank you... I guess."
     d "Oh, you're very welcome."
@@ -430,6 +447,7 @@ label ch1_s12_4:
     $ dmood = 'neutral'
     $ cmood = 'neutral'
     $ vmood = 'neutral'
+    show valencia
     "I realize that the phoenix is still lying on the surgery table, and the room is a mess from the operation."
     m "That's a... phoenix!"
     "I'm surprised he recognizes what the bird is."

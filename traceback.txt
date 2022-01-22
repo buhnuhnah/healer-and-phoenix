@@ -1,28 +1,94 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/chapters/ch1_s13-16.rpy", line 255, in script
-    with none
-  File "game/chapters/ch1_s13-16.rpy", line 255, in <module>
-    with none
-NameError: name 'none' is not defined
+  File "game/chapters/ch1_s1-7.rpy", line 599, in script
+    c "By the gods!"
+  File "game/chapters/ch1_s1-7.rpy", line 599, in script
+    c "By the gods!"
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+  File "game/screens.rpy", line 106, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 106, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 109, in execute
+    window:
+  File "game/screens.rpy", line 111, in execute
+    if centerTextbox == True:
+  File "game/screens.rpy", line 112, in execute
+    window:
+  File "game/screens.rpy", line 112, in keywords
+    window:
+  File "game/screens.rpy", line 113, in <module>
+    style centeredTextbox
+NameError: name 'centeredTextbox' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/chapters/ch1_s13-16.rpy", line 255, in script
-    with none
-  File "renpy/ast.py", line 1390, in execute
-    trans = renpy.python.py_eval(self.expr)
-  File "renpy/python.py", line 2249, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 2242, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/chapters/ch1_s13-16.rpy", line 255, in <module>
-    with none
-NameError: name 'none' is not defined
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 617, in main
+    run(restart)
+  File "renpy/main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "renpy/execution.py", line 922, in run_context
+    context.run()
+  File "game/chapters/ch1_s1-7.rpy", line 599, in script
+    c "By the gods!"
+  File "game/chapters/ch1_s1-7.rpy", line 599, in script
+    c "By the gods!"
+  File "renpy/ast.py", line 683, in execute
+    statement_name(getattr(who, "statement_name", "say"))
+  File "renpy/ast.py", line 46, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+  File "renpy/exports.py", line 1646, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2610, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3101, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3512, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 432, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3512, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 443, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 631, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 106, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 106, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 109, in execute
+    window:
+  File "game/screens.rpy", line 111, in execute
+    if centerTextbox == True:
+  File "game/screens.rpy", line 112, in execute
+    window:
+  File "game/screens.rpy", line 112, in keywords
+    window:
+  File "game/screens.rpy", line 113, in <module>
+    style centeredTextbox
+NameError: name 'centeredTextbox' is not defined
 
 Windows-10-10.0.22000
 Ren'Py 7.4.4.1439
-Healer and Phoenix 1.2
-Sun Jan  9 10:47:56 2022
+Healer and Phoenix 1.3
+Sun Jan 16 11:08:59 2022

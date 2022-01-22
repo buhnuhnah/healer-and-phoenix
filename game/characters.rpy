@@ -31,3 +31,5 @@ define character.d = Character("Diedriech", voice_tag="diedriech", side_image="a
 image diedriech = ConditionSwitch(
     "_last_say_who == 'd'", "images/diedriech/diedriech [dmood] talk.png",
     "True", "images/diedriech/diedriech [dmood].png")
+
+image phoenix = "images/animals/phoenix.png"

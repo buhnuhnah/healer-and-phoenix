@@ -1,0 +1,14 @@
+The navy-colored wonsh with the green underbelly is truly a beautiful creature. However, the red light in its head is dim, suggesting it must be in immense pain.
+[Catalina Worried] “Can the owner of the wonsh please come in?"
+[Wonsh’s Owner] “Thank you, Healer!"
+[doctor’s room day]
+The wonsh’s owner enters the doctor’s room, carrying his pet in his arms.
+This is concerning as the species normally slithers on its own.
+Wonsh are usually quite independent and don't want to be carried.
+I share a worried look with Valencia.
+The man sets his pet on the surgery table.
+[Catalina Worried] “Before I take a look, could you tell me what happened?"
+[Wonsh’s Owner] “My Mateo and I were playing catch in the fields."
+[Wonsh’s Owner] “Suddenly Mateo hissed in pain and now he doesn’t want to move on his own."
+[Catalina Worried] “Hmm…"
+Time to put the wonsh under inspection then!

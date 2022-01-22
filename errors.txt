@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/chapters/ch1_s13-16.rpy", line 305: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a ' at the end of the first line.)
-        $ cmood = 'surprised
+File "game/chapters/ch1_s8-12.rpy", line 281: expected 'image_name_component' not found.
+    show 
+         ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Sun Jan  9 10:31:09 2022
+Sun Jan 16 11:52:42 2022

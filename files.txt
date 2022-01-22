@@ -1,0 +1,793 @@
+0init.rpy
+0init.rpyc
+characters.rpy
+characters.rpyc
+gui.rpy
+gui.rpyc
+logo.png
+options.rpy
+options.rpyc
+presplash.png
+screens.rpy
+screens.rpyc
+transforms.rpy
+transforms.rpyc
+variables.rpy
+variables.rpyc
+audio\music\HoA_-_Edmundo_Demo_Complete_01.ogg
+audio\sfx\GUI_sfx_implementation_for_HP.pdf
+audio\sfx\mouse_hover.ogg
+audio\sfx\on_mouse_button_down.ogg
+audio\sfx\screen_changes_.ogg
+audio\sfx\text_slides.ogg
+cache\bytecode.rpyb
+cache\pyanalysis.rpyb
+cache\screens.rpyb
+chapters\ch1_s1-7.rpy
+chapters\ch1_s1-7.rpyc
+chapters\ch1_s13-16.rpy
+chapters\ch1_s13-16.rpyc
+chapters\ch1_s8-12.rpy
+chapters\ch1_s8-12.rpyc
+chapters\reader.py
+chapters\text.txt
+gui\bg.png
+gui\bt_hover_setting.png
+gui\bt_setting.png
+gui\frame.png
+gui\game_menu.png
+gui\main_menu.png
+gui\namebox.png
+gui\notify.png
+gui\nvl.png
+gui\skip.png
+gui\textbox.png
+gui\window_icon.png
+gui\avatar\avatar_catalina.png
+gui\avatar\avatar_diedriech.png
+gui\avatar\avatar_edmundo.png
+gui\avatar\avatar_max.png
+gui\avatar\avatar_other.png
+gui\avatar\avatar_valencia.png
+gui\bar\bottom.png
+gui\bar\left.png
+gui\bar\right.png
+gui\bar\top.png
+gui\button\check_foreground.png
+gui\button\check_selected_foreground.png
+gui\button\choice_hover_background.png
+gui\button\choice_idle_background.png
+gui\button\hover_background.png
+gui\button\idle_background.png
+gui\button\quick_hover_background.png
+gui\button\quick_idle_background.png
+gui\button\radio_foreground.png
+gui\button\radio_selected_foreground.png
+gui\button\slot_hover_background.png
+gui\button\slot_idle_background.png
+gui\choice\choice.png
+gui\confirm\load\!!frame_exit.png
+gui\confirm\load\Are you sure you want to continueAll unsaved progress will be lost.png
+gui\confirm\load\frame_exit.png
+gui\confirm\load\no.png
+gui\confirm\load\no_hover.png
+gui\confirm\load\yes.png
+gui\confirm\load\yes_hover.png
+gui\confirm\quit\!what does it look like.png
+gui\confirm\quit\Are You Sure You Want To Exit.png
+gui\confirm\quit\Rectangle 37.png
+gui\confirm\quit\no.png
+gui\confirm\quit\no_hover.png
+gui\confirm\quit\yes.png
+gui\confirm\quit\yes_hover.png
+gui\fonts\OpenSans-Bold.ttf
+gui\fonts\OpenSans-BoldItalic.ttf
+gui\fonts\OpenSans-ExtraBold.ttf
+gui\fonts\OpenSans-ExtraBoldItalic.ttf
+gui\fonts\OpenSans-Italic.ttf
+gui\fonts\OpenSans-Light.ttf
+gui\fonts\OpenSans-LightItalic.ttf
+gui\fonts\OpenSans-Medium.ttf
+gui\fonts\OpenSans-MediumItalic.ttf
+gui\fonts\OpenSans-Regular.ttf
+gui\fonts\OpenSans-SemiBold.ttf
+gui\fonts\OpenSans-SemiBoldItalic.ttf
+gui\fonts\Satisfy-Regular.ttf
+gui\game_menu\Back to menu footer.png
+gui\game_menu\Exit to menu in game.png
+gui\game_menu\Setting_menu_in_game.png
+gui\game_menu\exit to desktop.png
+gui\game_menu\frame_menu.png
+gui\game_menu\hover_Exit to menu in game.png
+gui\game_menu\hover_Setting_menu_in_game.png
+gui\game_menu\hover_exit to desktop.png
+gui\game_menu\hover_setting.png
+gui\game_menu\setting.png
+gui\game_menu\white.png
+gui\history\Back to menu.png
+gui\history\History.png
+gui\history\frame.png
+gui\history\hover_Back to menu.png
+gui\history\hover_setting.png
+gui\history\scroll1.png
+gui\history\scroll2.png
+gui\history\setting.png
+gui\history\white.png
+gui\load\1.png
+gui\load\1_hover.png
+gui\load\Back to menu.png
+gui\load\Component 45 – 2.png
+gui\load\Load Game.png
+gui\load\Rectangle 58.png
+gui\load\hover_Back to menu.png
+gui\load\scroll1.png
+gui\load\scroll2.png
+gui\load\white.png
+gui\main_menu\bg.png
+gui\main_menu\logo.png
+gui\main_menu\Deafaut\New Game.png
+gui\main_menu\Deafaut\credits.png
+gui\main_menu\Deafaut\exit.png
+gui\main_menu\Deafaut\gallery.png
+gui\main_menu\Deafaut\help.png
+gui\main_menu\Deafaut\load game.png
+gui\main_menu\Deafaut\settings.png
+gui\main_menu\hover\hover_New Game.png
+gui\main_menu\hover\hover_credits.png
+gui\main_menu\hover\hover_exit.png
+gui\main_menu\hover\hover_gallery.png
+gui\main_menu\hover\hover_help.png
+gui\main_menu\hover\hover_load game.png
+gui\main_menu\hover\hover_settings.png
+gui\overlay\confirm.png
+gui\overlay\game_menu.png
+gui\overlay\main_menu.png
+gui\phone\nvl.png
+gui\phone\textbox.png
+gui\phone\bar\bottom.png
+gui\phone\bar\left.png
+gui\phone\bar\right.png
+gui\phone\bar\top.png
+gui\phone\button\check_foreground.png
+gui\phone\button\check_selected_foreground.png
+gui\phone\button\choice_hover_background.png
+gui\phone\button\choice_idle_background.png
+gui\phone\button\hover_background.png
+gui\phone\button\idle_background.png
+gui\phone\button\radio_foreground.png
+gui\phone\button\radio_selected_foreground.png
+gui\phone\button\slot_hover_background.png
+gui\phone\button\slot_idle_background.png
+gui\phone\overlay\game_menu.png
+gui\phone\overlay\main_menu.png
+gui\phone\scrollbar\horizontal_hover_bar.png
+gui\phone\scrollbar\horizontal_hover_thumb.png
+gui\phone\scrollbar\horizontal_idle_bar.png
+gui\phone\scrollbar\horizontal_idle_thumb.png
+gui\phone\scrollbar\vertical_hover_bar.png
+gui\phone\scrollbar\vertical_hover_thumb.png
+gui\phone\scrollbar\vertical_idle_bar.png
+gui\phone\scrollbar\vertical_idle_thumb.png
+gui\phone\slider\horizontal_hover_bar.png
+gui\phone\slider\horizontal_hover_thumb.png
+gui\phone\slider\horizontal_idle_bar.png
+gui\phone\slider\horizontal_idle_thumb.png
+gui\phone\slider\vertical_hover_bar.png
+gui\phone\slider\vertical_hover_thumb.png
+gui\phone\slider\vertical_idle_bar.png
+gui\phone\slider\vertical_idle_thumb.png
+gui\scrollbar\horizontal_hover_bar.png
+gui\scrollbar\horizontal_hover_thumb.png
+gui\scrollbar\horizontal_idle_bar.png
+gui\scrollbar\horizontal_idle_thumb.png
+gui\scrollbar\vertical_hover_bar.png
+gui\scrollbar\vertical_hover_thumb.png
+gui\scrollbar\vertical_idle_bar.png
+gui\scrollbar\vertical_idle_thumb.png
+gui\settings\After Choices.png
+gui\settings\All messages.png
+gui\settings\All.png
+gui\settings\Auto Text Speed.png
+gui\settings\Back to menu-1.png
+gui\settings\Back to menu.png
+gui\settings\Catalina.png
+gui\settings\Component 5 – 1.png
+gui\settings\Component 5 – 3.png
+gui\settings\Component 6 – 1.png
+gui\settings\Component 6 – 3.png
+gui\settings\Component 7 – 1.png
+gui\settings\Component 7 – 4.png
+gui\settings\Diedriech.png
+gui\settings\Display.png
+gui\settings\Edmundo.png
+gui\settings\Fullscreen.png
+gui\settings\Global Voice Volume.png
+gui\settings\Icon metro-volume-mute-5.png
+gui\settings\Keep skipping.png
+gui\settings\Max.png
+gui\settings\Music Volume.png
+gui\settings\None.png
+gui\settings\Other.png
+gui\settings\Read messages.png
+gui\settings\Rectangle 14.png
+gui\settings\Rectangle 15.png
+gui\settings\Rectangle 62.png
+gui\settings\SFX Volume.png
+gui\settings\Setting.png
+gui\settings\Skip.png
+gui\settings\Stop skipping.png
+gui\settings\Text Speed.png
+gui\settings\Transitions.png
+gui\settings\Valencia.png
+gui\settings\Window.png
+gui\settings\frame.png
+gui\settings\scrollbar.png
+gui\settings\scrollbar2.png
+gui\settings\white.png
+gui\slider\horizontal_hover_bar.png
+gui\slider\horizontal_hover_thumb.png
+gui\slider\horizontal_idle_bar.png
+gui\slider\horizontal_idle_thumb.png
+gui\slider\vertical_hover_bar.png
+gui\slider\vertical_hover_thumb.png
+gui\slider\vertical_idle_bar.png
+gui\slider\vertical_idle_thumb.png
+gui\textbox\auto.png
+gui\textbox\centeredTextbox.png
+gui\textbox\history.png
+gui\textbox\hover_auto.png
+gui\textbox\hover_history.png
+gui\textbox\hover_load.png
+gui\textbox\hover_save.png
+gui\textbox\hover_skip.png
+gui\textbox\load.png
+gui\textbox\save.png
+gui\textbox\skip.png
+gui\textbox\textbox.png
+images\imageWriter.py
+images\image_directory.rpy
+images\image_directory.rpyc
+images\animals\phoenix.png
+images\animals\phoenix2.png
+images\bg\bg dining day.png
+images\bg\bg road day dream.png
+images\bg\bg road day.png
+images\bg\bg road sunset dream.png
+images\bg\bg road sunset.png
+images\bg\bg vet day.png
+images\bg\bg vet night.png
+images\bg\bg vet sunset.png
+images\bg\bg waiting day.png
+images\bg\bg waiting night.png
+images\bg\bg waiting sunset.png
+images\bg\bg wasteland dream.png
+images\bg\bg wasteland.png
+images\catalina\catalina angry talk.png
+images\catalina\catalina angry.png
+images\catalina\catalina cry talk.png
+images\catalina\catalina cry.png
+images\catalina\catalina happy talk.png
+images\catalina\catalina happy.png
+images\catalina\catalina neutral talk.png
+images\catalina\catalina neutral.png
+images\catalina\catalina sad talk.png
+images\catalina\catalina sad.png
+images\catalina\catalina shy talk.png
+images\catalina\catalina shy.png
+images\catalina\catalina surprised talk.png
+images\catalina\catalina surprised.png
+images\catalina\catalina worried talk.png
+images\catalina\catalina worried.png
+images\cg\cg diedriech.png
+images\cg\cg max.png
+images\cg\cg phoenix.png
+images\diedriech\diedriech angry talk.png
+images\diedriech\diedriech angry.png
+images\diedriech\diedriech happy talk.png
+images\diedriech\diedriech happy.png
+images\diedriech\diedriech neutral talk.png
+images\diedriech\diedriech neutral.png
+images\diedriech\diedriech pain talk.png
+images\diedriech\diedriech pain.png
+images\diedriech\diedriech sad talk.png
+images\diedriech\diedriech sad.png
+images\diedriech\diedriech shy talk.png
+images\diedriech\diedriech shy.png
+images\diedriech\diedriech surprised talk.png
+images\diedriech\diedriech surprised.png
+images\diedriech\diedriech worried talk.png
+images\diedriech\diedriech worried.png
+images\edmundo\ed angry talk.png
+images\edmundo\ed angry.png
+images\edmundo\ed happy talk.png
+images\edmundo\ed happy.png
+images\edmundo\ed neutral talk.png
+images\edmundo\ed neutral.png
+images\edmundo\ed sad talk.png
+images\edmundo\ed sad.png
+images\edmundo\ed shy talk.png
+images\edmundo\ed shy.png
+images\edmundo\ed surprised talk.png
+images\edmundo\ed surprised.png
+images\max\max angry graciella angry.png
+images\max\max angry graciella happy.png
+images\max\max angry graciella neutral.png
+images\max\max angry graciella sad.png
+images\max\max angry graciella surprised.png
+images\max\max angry talk graciella angry.png
+images\max\max angry talk graciella happy.png
+images\max\max angry talk graciella neutral.png
+images\max\max angry talk graciella sad.png
+images\max\max angry talk graciella surprised.png
+images\max\max angry talk.png
+images\max\max angry.png
+images\max\max happy graciella angry.png
+images\max\max happy graciella happy.png
+images\max\max happy graciella neutral.png
+images\max\max happy graciella sad.png
+images\max\max happy graciella surprised.png
+images\max\max happy talk graciella angry.png
+images\max\max happy talk graciella happy.png
+images\max\max happy talk graciella neutral.png
+images\max\max happy talk graciella sad.png
+images\max\max happy talk graciella surprised.png
+images\max\max happy talk.png
+images\max\max happy.png
+images\max\max neutral graciella angry.png
+images\max\max neutral graciella happy.png
+images\max\max neutral graciella neutral.png
+images\max\max neutral graciella sad.png
+images\max\max neutral graciella surprised.png
+images\max\max neutral talk graciella angry.png
+images\max\max neutral talk graciella happy.png
+images\max\max neutral talk graciella neutral.png
+images\max\max neutral talk graciella sad.png
+images\max\max neutral talk graciella surprised.png
+images\max\max neutral talk.png
+images\max\max neutral.png
+images\max\max pain graciella angry.png
+images\max\max pain graciella happy.png
+images\max\max pain graciella neutral.png
+images\max\max pain graciella sad.png
+images\max\max pain graciella surprised.png
+images\max\max pain talk graciella angry.png
+images\max\max pain talk graciella happy.png
+images\max\max pain talk graciella neutral.png
+images\max\max pain talk graciella sad.png
+images\max\max pain talk graciella surprised.png
+images\max\max pain talk.png
+images\max\max pain.png
+images\max\max sad graciella angry.png
+images\max\max sad graciella happy.png
+images\max\max sad graciella neutral.png
+images\max\max sad graciella sad.png
+images\max\max sad graciella surprised.png
+images\max\max sad talk graciella angry.png
+images\max\max sad talk graciella happy.png
+images\max\max sad talk graciella neutral.png
+images\max\max sad talk graciella sad.png
+images\max\max sad talk graciella surprised.png
+images\max\max sad talk.png
+images\max\max sad.png
+images\max\max shy graciella angry.png
+images\max\max shy graciella happy.png
+images\max\max shy graciella neutral.png
+images\max\max shy graciella sad.png
+images\max\max shy graciella surprised.png
+images\max\max shy talk graciella  neutral.png
+images\max\max shy talk graciella angry.png
+images\max\max shy talk graciella happy.png
+images\max\max shy talk graciella neutral.png
+images\max\max shy talk graciella sad.png
+images\max\max shy talk graciella surprised.png
+images\max\max shy talk.png
+images\max\max shy.png
+images\max\max surprised graciella angry.png
+images\max\max surprised graciella happy.png
+images\max\max surprised graciella neutral.png
+images\max\max surprised graciella sad.png
+images\max\max surprised graciella surprised.png
+images\max\max surprised talk graciella angry.png
+images\max\max surprised talk graciella happy.png
+images\max\max surprised talk graciella neutral.png
+images\max\max surprised talk graciella sad.png
+images\max\max surprised talk graciella surprised.png
+images\max\max surprised talk.png
+images\max\max surprised.png
+images\max\max worried graciella angry.png
+images\max\max worried graciella happy.png
+images\max\max worried graciella neutral.png
+images\max\max worried graciella sad.png
+images\max\max worried graciella surprised.png
+images\max\max worried talk graciella angry.png
+images\max\max worried talk graciella happy.png
+images\max\max worried talk graciella neutral.png
+images\max\max worried talk graciella sad.png
+images\max\max worried talk graciella surprised.png
+images\max\max worried talk.png
+images\max\max worried.png
+images\valencia\valencia angry talk.png
+images\valencia\valencia angry.png
+images\valencia\valencia annoyed talk.png
+images\valencia\valencia annoyed.png
+images\valencia\valencia happy talk.png
+images\valencia\valencia happy.png
+images\valencia\valencia neutral talk.png
+images\valencia\valencia neutral.png
+images\valencia\valencia sad talk.png
+images\valencia\valencia sad.png
+images\valencia\valencia shy talk.png
+images\valencia\valencia shy.png
+images\valencia\valencia surprised talk.png
+images\valencia\valencia surprised.png
+images\valencia\valencia worried talk.png
+images\valencia\valencia worried.png
+saves\1-1-LT1.save
+saves\1-2-LT1.save
+saves\1-3-LT1.save
+saves\_reload-2-LT1.save
+saves\auto-1-LT1.save
+saves\auto-10-LT1.save
+saves\auto-2-LT1.save
+saves\auto-3-LT1.save
+saves\auto-4-LT1.save
+saves\auto-5-LT1.save
+saves\auto-6-LT1.save
+saves\auto-7-LT1.save
+saves\auto-8-LT1.save
+saves\auto-9-LT1.save
+saves\navigation.json
+saves\persistent
+tl\None\common.rpym
+tl\None\common.rpymc
+voice\0voiceNames.py
+voice\ch1_s10_0ba1ed90.ogg
+voice\ch1_s10_1047669d.ogg
+voice\ch1_s10_16f4b4cb.ogg
+voice\ch1_s10_245a0a96.ogg
+voice\ch1_s10_37e4d364.ogg
+voice\ch1_s10_3d4d501b.ogg
+voice\ch1_s10_4191d973.ogg
+voice\ch1_s10_4563b6f3.ogg
+voice\ch1_s10_49a9bbc9.ogg
+voice\ch1_s10_49bf9c24.ogg
+voice\ch1_s10_56a176a2.ogg
+voice\ch1_s10_5870a52a.ogg
+voice\ch1_s10_5f4eab4a.ogg
+voice\ch1_s10_6741c4ba.ogg
+voice\ch1_s10_67b519b5.ogg
+voice\ch1_s10_694b5817.ogg
+voice\ch1_s10_697ff1d8.ogg
+voice\ch1_s10_72d0730d.ogg
+voice\ch1_s10_7b8c37f9.ogg
+voice\ch1_s10_8072b758.ogg
+voice\ch1_s10_85b22fc9.ogg
+voice\ch1_s10_accd0886.ogg
+voice\ch1_s10_b1ee88de.ogg
+voice\ch1_s10_ba323801.ogg
+voice\ch1_s10_c2d92e02.ogg
+voice\ch1_s10_c60be1ac.ogg
+voice\ch1_s10_d0c82823.ogg
+voice\ch1_s10_d5d88f7e.ogg
+voice\ch1_s10_df50c97e.ogg
+voice\ch1_s10_die1.ogg
+voice\ch1_s10_die2.ogg
+voice\ch1_s10_die3.ogg
+voice\ch1_s10_die4.ogg
+voice\ch1_s10_die5.ogg
+voice\ch1_s10_f7e44fb5.ogg
+voice\ch1_s10_feebc383.ogg
+voice\ch1_s10_ff78eb8d.ogg
+voice\ch1_s11_17e8a136.ogg
+voice\ch1_s11_1fd3920a.ogg
+voice\ch1_s11_4d337d58.ogg
+voice\ch1_s11_637064cb.ogg
+voice\ch1_s11_a20764df.ogg
+voice\ch1_s11_caa8c194.ogg
+voice\ch1_s11_da14cb0b.ogg
+voice\ch1_s11_ee47f524.ogg
+voice\ch1_s11_ffdbe4a9.ogg
+voice\ch1_s12_0813551b.ogg
+voice\ch1_s12_12c4b7a7.ogg
+voice\ch1_s12_1e8fa411.ogg
+voice\ch1_s12_2_0e9376ba.ogg
+voice\ch1_s12_2_3666e535.ogg
+voice\ch1_s12_2_825ded63.ogg
+voice\ch1_s12_2_8344e114.ogg
+voice\ch1_s12_2_e5eb9019.ogg
+voice\ch1_s12_331328d3.ogg
+voice\ch1_s12_3_0fc25c45.ogg
+voice\ch1_s12_3_1e572101.ogg
+voice\ch1_s12_3_20bb58a7.ogg
+voice\ch1_s12_3_40a9461c.ogg
+voice\ch1_s12_3_8133ded6.ogg
+voice\ch1_s12_3_8e5bfb4c.ogg
+voice\ch1_s12_3_ebdf727f.ogg
+voice\ch1_s12_3_ed7ced0f.ogg
+voice\ch1_s12_4_0b52113b.ogg
+voice\ch1_s12_4_3b3a70f4.ogg
+voice\ch1_s12_4_4e50fc13.ogg
+voice\ch1_s12_4_93929495.ogg
+voice\ch1_s12_4_f9538c83.ogg
+voice\ch1_s12_5_00f7d336.ogg
+voice\ch1_s12_5_27f434af.ogg
+voice\ch1_s12_5_3b231ca4.ogg
+voice\ch1_s12_5_6bc94113.ogg
+voice\ch1_s12_5_8c905f28.ogg
+voice\ch1_s12_5_a2b7c1c1.ogg
+voice\ch1_s12_5_b0b08aad.ogg
+voice\ch1_s12_5_ba6c2961.ogg
+voice\ch1_s12_5_c28fa77b.ogg
+voice\ch1_s12_5_c704171b.ogg
+voice\ch1_s12_5_ceab159a.ogg
+voice\ch1_s12_5_e48c9cb0.ogg
+voice\ch1_s12_7f253fab.ogg
+voice\ch1_s12_9f3909d0.ogg
+voice\ch1_s12_b43eae3f.ogg
+voice\ch1_s13_diedriech_00c0cfa3.ogg
+voice\ch1_s13_diedriech_00d683c2.ogg
+voice\ch1_s13_diedriech_1b4e3c78.ogg
+voice\ch1_s13_diedriech_41b152bf.ogg
+voice\ch1_s13_diedriech_41b152bf_1.ogg
+voice\ch1_s13_diedriech_4fe17b24.ogg
+voice\ch1_s13_diedriech_58abdaf0.ogg
+voice\ch1_s13_diedriech_6d9ac7b8.ogg
+voice\ch1_s13_diedriech_73e9f981.ogg
+voice\ch1_s13_diedriech_74f35798.ogg
+voice\ch1_s13_diedriech_d19f855d.ogg
+voice\ch1_s13_diedriech_e5a4eaab.ogg
+voice\ch1_s13_diedriech_ed2cae70.ogg
+voice\ch1_s13_edmundo_13f8db2a.ogg
+voice\ch1_s13_edmundo_1d1be59b.ogg
+voice\ch1_s13_edmundo_43eada31.ogg
+voice\ch1_s13_edmundo_4b453505.ogg
+voice\ch1_s13_edmundo_960ac37e.ogg
+voice\ch1_s13_edmundo_a5c68ad4.ogg
+voice\ch1_s13_max_1c6a7b8a.ogg
+voice\ch1_s13_max_5e8b2f33.ogg
+voice\ch1_s13_max_a610eac2.ogg
+voice\ch1_s13_max_b2d3664e.ogg
+voice\ch1_s13_max_b2d3664e_1.ogg
+voice\ch1_s13_max_b3918e68.ogg
+voice\ch1_s13_max_e2322808.ogg
+voice\ch1_s14_0a121636.ogg
+voice\ch1_s14_0ed734a0.ogg
+voice\ch1_s14_5906951f.ogg
+voice\ch1_s14_63e06210.ogg
+voice\ch1_s14_7050309a.ogg
+voice\ch1_s14_74755ad0.ogg
+voice\ch1_s14_8fe764ac.ogg
+voice\ch1_s14_abb1e644.ogg
+voice\ch1_s14_ca7ea77d.ogg
+voice\ch1_s14_d79a71cf.ogg
+voice\ch1_s14_f976e423.ogg
+voice\ch1_s14_fc423727.ogg
+voice\ch1_s15_6f80bb10.ogg
+voice\ch1_s15_89bf98ee.ogg
+voice\ch1_s15_bc86a90d.ogg
+voice\ch1_s16_16844653.ogg
+voice\ch1_s16_1b832cad.ogg
+voice\ch1_s16_23938045.ogg
+voice\ch1_s16_2a6d11a4.ogg
+voice\ch1_s16_2f25ee0e.ogg
+voice\ch1_s16_3e625189.ogg
+voice\ch1_s16_4a0b203a.ogg
+voice\ch1_s16_58945aaf.ogg
+voice\ch1_s16_5e308730.ogg
+voice\ch1_s16_6210126b.ogg
+voice\ch1_s16_7a368abf.ogg
+voice\ch1_s16_9c397a16.ogg
+voice\ch1_s16_c14adc8d.ogg
+voice\ch1_s16_c6c50046.ogg
+voice\ch1_s16_d612d911.ogg
+voice\ch1_s16_d87883bc.ogg
+voice\ch1_s16_dd39c7e7.ogg
+voice\ch1_s16_e7d4c118.ogg
+voice\ch1_s16_f434cccf.ogg
+voice\ch1_s2_1e665559.ogg
+voice\ch1_s2_2_03cfdd1a.ogg
+voice\ch1_s2_2_0b97ad98.ogg
+voice\ch1_s2_2_57279acc.ogg
+voice\ch1_s2_2_62d6e2b1.ogg
+voice\ch1_s2_38cb10c3.ogg
+voice\ch1_s2_39b1dd6b.ogg
+voice\ch1_s2_3_41adc0bc.ogg
+voice\ch1_s2_3_77ae32a4.ogg
+voice\ch1_s2_3_93929495.ogg
+voice\ch1_s2_3_b2d3664e.ogg
+voice\ch1_s2_3_d5e4db6d.ogg
+voice\ch1_s2_455e7216.ogg
+voice\ch1_s2_4c27615d.ogg
+voice\ch1_s2_5_46812aee.ogg
+voice\ch1_s2_5_48bb9113.ogg
+voice\ch1_s2_5_d0286bb9.ogg
+voice\ch1_s2_5_d21cfb25.ogg
+voice\ch1_s2_5_d36d6068.ogg
+voice\ch1_s2_5_d9fa8fce.ogg
+voice\ch1_s2_678b7f98.ogg
+voice\ch1_s2_698f9eef.ogg
+voice\ch1_s2_7aceb71a.ogg
+voice\ch1_s2_7b92b70f.ogg
+voice\ch1_s2_9469f970.ogg
+voice\ch1_s2_94fe5e48.ogg
+voice\ch1_s2_ac905aba.ogg
+voice\ch1_s2_b89e537e.ogg
+voice\ch1_s2_e8b79ef2.ogg
+voice\ch1_s2_f03fbfb8.ogg
+voice\ch1_s2_f1b8099c.ogg
+voice\ch1_s3_1_05b6a4b1.ogg
+voice\ch1_s3_1_1e665559.ogg
+voice\ch1_s3_1_20f267ec.ogg
+voice\ch1_s3_1_21e1d7eb.ogg
+voice\ch1_s3_1_7e5ca41a.ogg
+voice\ch1_s3_1_7f2c99d3.ogg
+voice\ch1_s3_1_8717e95b.ogg
+voice\ch1_s3_1_ade7b8a5.ogg
+voice\ch1_s3_1_fe46f3d6.ogg
+voice\ch1_s3_2_0bd52403.ogg
+voice\ch1_s3_2_57a64282.ogg
+voice\ch1_s3_2_583dcdd3.ogg
+voice\ch1_s3_2_7b57f381.ogg
+voice\ch1_s3_2_8843c357.ogg
+voice\ch1_s3_2_8f7ed509.ogg
+voice\ch1_s3_2_905b6c6b.ogg
+voice\ch1_s3_2_9761a62e.ogg
+voice\ch1_s3_2_a43d04bc.ogg
+voice\ch1_s3_2_c4bfdd08.ogg
+voice\ch1_s3_2_e1dba16e.ogg
+voice\ch1_s3_3_075716ed.ogg
+voice\ch1_s3_3_3f2a5d9f.ogg
+voice\ch1_s3_3_46f0277d.ogg
+voice\ch1_s3_3_499819e9.ogg
+voice\ch1_s3_3_75becaf3.ogg
+voice\ch1_s3_3_774da5e2.ogg
+voice\ch1_s3_3_91afc6ed.ogg
+voice\ch1_s3_3_9cfb5d37.ogg
+voice\ch1_s3_3_b738b644.ogg
+voice\ch1_s3_3_f9cdf82c.ogg
+voice\ch1_s3_a86703c2.ogg
+voice\ch1_s4_0c876a35.ogg
+voice\ch1_s4_2_8a7d78f3.ogg
+voice\ch1_s4_2_f197d3c6.ogg
+voice\ch1_s4_3_2d24dc5b.ogg
+voice\ch1_s4_3_53db5437.ogg
+voice\ch1_s4_3fee2a29.ogg
+voice\ch1_s4_4_0c6cc659.ogg
+voice\ch1_s4_4_771a0dcd.ogg
+voice\ch1_s4_4_9a062e77.ogg
+voice\ch1_s4_4_c9a8c3a3.ogg
+voice\ch1_s4_4d666d5b.ogg
+voice\ch1_s4_53c56f13.ogg
+voice\ch1_s4_5_7b77c12c.ogg
+voice\ch1_s4_5_c27d2670.ogg
+voice\ch1_s4_5b2ba77b.ogg
+voice\ch1_s4_60b4e2b0.ogg
+voice\ch1_s4_63948e1e.ogg
+voice\ch1_s4_6c177ad4.ogg
+voice\ch1_s4_7120e519.ogg
+voice\ch1_s4_7dedd29e.ogg
+voice\ch1_s4_a44b0ef8.ogg
+voice\ch1_s4_a7f086d3.ogg
+voice\ch1_s4_aa4d97b6.ogg
+voice\ch1_s4_c9577805.ogg
+voice\ch1_s4_de317604.ogg
+voice\ch1_s4_ef6cf8b2.ogg
+voice\ch1_s4_ef6cf8b2_1.ogg
+voice\ch1_s4_fbbb1b85.ogg
+voice\ch1_s5_01ea9b83.ogg
+voice\ch1_s5_0315ab79.ogg
+voice\ch1_s5_0ce91a6e.ogg
+voice\ch1_s5_0d922780.ogg
+voice\ch1_s5_118d50b0.ogg
+voice\ch1_s5_1366bd40.ogg
+voice\ch1_s5_1666e1cd.ogg
+voice\ch1_s5_20821989.ogg
+voice\ch1_s5_28907149.ogg
+voice\ch1_s5_28e521b5.ogg
+voice\ch1_s5_3351572d.ogg
+voice\ch1_s5_3d46583b.ogg
+voice\ch1_s5_58fc962f.ogg
+voice\ch1_s5_5b2ba77b.ogg
+voice\ch1_s5_65bd57b8.ogg
+voice\ch1_s5_660eabc2.ogg
+voice\ch1_s5_66f66762.ogg
+voice\ch1_s5_6f0c54a0.ogg
+voice\ch1_s5_738579ba.ogg
+voice\ch1_s5_772beb9f.ogg
+voice\ch1_s5_77f0fb62.ogg
+voice\ch1_s5_88451f45.ogg
+voice\ch1_s5_8e7e6671.ogg
+voice\ch1_s5_912f53d7.ogg
+voice\ch1_s5_a800293c.ogg
+voice\ch1_s5_a98d474f.ogg
+voice\ch1_s5_bc640bcc.ogg
+voice\ch1_s5_c455c4a7.ogg
+voice\ch1_s5_cfc438cf.ogg
+voice\ch1_s5_e248bdd7.ogg
+voice\ch1_s5_ff65f44b.ogg
+voice\ch1_s6_1375def8.ogg
+voice\ch1_s6_438d57f0.ogg
+voice\ch1_s6_63948e1e.ogg
+voice\ch1_s6_6b640bce.ogg
+voice\ch1_s6_9951365b.ogg
+voice\ch1_s6_cat1.ogg
+voice\ch1_s6_d0313530.ogg
+voice\ch1_s7_09de9716.ogg
+voice\ch1_s7_40f66e4e.ogg
+voice\ch1_s7_49b851de.ogg
+voice\ch1_s7_4a18a84b.ogg
+voice\ch1_s7_4fff3f0f.ogg
+voice\ch1_s7_5eed3998.ogg
+voice\ch1_s7_668d8827.ogg
+voice\ch1_s7_a2af704a.ogg
+voice\ch1_s7_ac21b975.ogg
+voice\ch1_s7_bb8498dc.ogg
+voice\ch1_s7_be8a95aa.ogg
+voice\ch1_s7_ce0c17d5.ogg
+voice\ch1_s7_d16e44b7.ogg
+voice\ch1_s7_d373bfdf.ogg
+voice\ch1_s7_e69e42b8.ogg
+voice\ch1_s7_ef12fd8b.ogg
+voice\ch1_s8_0b29f857.ogg
+voice\ch1_s8_1292ed1d.ogg
+voice\ch1_s8_184185cf.ogg
+voice\ch1_s8_2a0247c8.ogg
+voice\ch1_s8_3a4312c6.ogg
+voice\ch1_s8_5506c81a.ogg
+voice\ch1_s8_56fc8a4d.ogg
+voice\ch1_s8_631d84cd.ogg
+voice\ch1_s8_65c08547.ogg
+voice\ch1_s8_6d63fb00.ogg
+voice\ch1_s8_716b8f15.ogg
+voice\ch1_s8_767258c7.ogg
+voice\ch1_s8_841de695.ogg
+voice\ch1_s8_908ccf2b.ogg
+voice\ch1_s8_a1f0da02.ogg
+voice\ch1_s8_a30f286f.ogg
+voice\ch1_s8_a6f5fc4e.ogg
+voice\ch1_s8_b10d7dbf.ogg
+voice\ch1_s8_bb8e98a3.ogg
+voice\ch1_s8_d979efc6.ogg
+voice\ch1_s8_die1.ogg
+voice\ch1_s8_e92f0a55.ogg
+voice\ch1_s8_eb425744.ogg
+voice\ch1_s8_f7c6e943.ogg
+voice\ch1_s9_2_0dfece15.ogg
+voice\ch1_s9_2_0fc9ff5f.ogg
+voice\ch1_s9_2_422cf30d.ogg
+voice\ch1_s9_2_f6330c9a.ogg
+voice\ch1_s9_2fd214c8.ogg
+voice\ch1_s9_3_0f57df71.ogg
+voice\ch1_s9_3_2c668ada.ogg
+voice\ch1_s9_3_7cc2c287.ogg
+voice\ch1_s9_3_df1a58b8.ogg
+voice\ch1_s9_4_12acb190.ogg
+voice\ch1_s9_4_21407721.ogg
+voice\ch1_s9_4_41b152bf.ogg
+voice\ch1_s9_4_4bc70e63.ogg
+voice\ch1_s9_4_6daf03f7.ogg
+voice\ch1_s9_4_79f0c52f.ogg
+voice\ch1_s9_4_84766eb5.ogg
+voice\ch1_s9_4_97112f47.ogg
+voice\ch1_s9_83dc4a01.ogg
+voice\ch1_s9_9a0464b3.ogg
+voice\ch1_s9_b8690600.ogg
+voice\ch1_s9_bbd21885.ogg
+voice\ch1_s9_c4c0b786.ogg
+voice\ch1_s9_caed2034.ogg
+voice\names.txt
+voice\start_0a09d7ce.ogg
+voice\start_254bd0c0.ogg
+voice\start_3a0b0272.ogg
+voice\start_44eae25b.ogg
+voice\start_48423cac.ogg
+voice\start_4d520aff.ogg
+voice\start_506d6db7.ogg
+voice\start_590ce42c.ogg
+voice\start_76a89a9c.ogg
+voice\start_7a437d03.ogg
+voice\start_841e597f.ogg
+voice\start_bbd5b3f9.ogg
+voice\start_c5d7eecf.ogg
+voice\start_edf47616.ogg
+voice\start_fbf0d701.ogg

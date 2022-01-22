@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.3"
+define config.version = "1.4"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -50,6 +50,7 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 
+define config.auto_voice = "voice/{id}.ogg"
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
