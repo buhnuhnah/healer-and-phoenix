@@ -65,10 +65,10 @@ label ch1_s2:
     "I touch the pet's stomach gently, and she hisses in pain."
     c "I think I know what the problem is..."
 
-    # INSERT MINIGAME
-    scene black with fade
-    "INSERT MINIGAME HERE"
+    scene black with dissolve
+    jump tutorial
 
+label ch1_s2a:
     scene bg vet day
     show catalina at flipCenter
     show max at left
@@ -125,7 +125,6 @@ label ch1_s2_2:
     "I make a sound of disappointment."
     $ cmood = 'neutral'
 
-    # CHECK THIS LATER
     show valencia at leftish
     show catalina at flipRight
     with move
@@ -216,19 +215,10 @@ label ch1_s3:
     "I step into the waiting room of the clinic with a bright smile on my face."
     "I notice several pets with their owners, a colorful bunch waiting for me to solve their problems."
     "Which one should I chose?"
-    $ menuset = set()
-menu:
-    set menuset
-    "Wonsh":
-        jump ch1_s3_1
-    "Flockto":
-        jump ch1_s3_2
-    "Lumerin":
-        jump ch1_s3_3
+    jump animal_choice
 
 
 label ch1_s3_1:
-    $ menuset.add("Wonsh")
     "The navy-colored wonsh with the green underbelly is truly a beautiful creature."
     "However, the red light in its head is dim, suggesting it must be in immense pain."
     c "Can the owner of the wonsh please come in?"
@@ -244,33 +234,24 @@ label ch1_s3_1:
     "Wonsh's Owner" "Suddenly Mateo hissed in pain and now he doesn't want to move on his own."
     c "Hmm..."
     "Time to put the wonsh under inspection then!"
+    jump second_minigame
 
-    "INSERT MINIGAME HERE"
-
+label ch1_s3_1a:
     c "There, all done! Just don't let Mateo slither for a few days, so the wound can heal properly."
     "Wonsh's Owner" "Thank you, Miss Catalina!"
     "The wonsh's owner pays for our services and leaves the doctor's room with the happy pet in arms."
     $ vmood = 'happy'
     v "A job well done!"
-
-    if len(menuset) > 3:
-        jump ch1_s4
-    show bg waiting day with dissolve
     $ cmood = 'neutral'
     $ vmood = 'neutral'
+
+    if wonsh.done_with_minigame and flocto.done_with_minigame and lemurin.done_with_minigame:
+        jump ch1_s4
+    show bg waiting day with dissolve
     "Now whom should I chose next?"
-menu:
-    set menuset
-    "Wonsh":
-        jump ch1_s3_1
-    "Flockto":
-        jump ch1_s3_2
-    "Lumerin":
-        jump ch1_s3_3
-jump ch1_s4
+    call screen choose_animal
 
 label ch1_s3_2:
-    $ menuset.add("Flockto")
     "The flockto is a wonderful animal with its white spotted skin and colorful tentacles."
     "Most flocktos are usually extremely colorful, so it's quite amazing to see an albino one."
     $ cmood = 'worried'
@@ -284,9 +265,9 @@ label ch1_s3_2:
     $ vmood = 'worried'
     "I hold back a sigh. She doesn't exactly give much information. I will have to work with it regardless."
     "The owner can be rude all she wants but what's important is to save the pet from suffering."
+    jump third_minigame
 
-    "INSERT MINIGAME HERE"
-
+label ch1_s3_2a:
     $ cmood = 'neutral'
     $ vmood = 'neutral'
     "Flockto's Owner" "Are they healed?"
@@ -299,26 +280,17 @@ label ch1_s3_2:
     v "Some people are really irresponsible."
     $ cmood = 'sad'
     c "I have a feeling this isn't the last time we are going to see this flockto and its owner."
-
-    if len(menuset) > 3:
-        jump ch1_s4
     show bg waiting day with dissolve
     "I sigh and walk out of the doctor's room."
     $ cmood = 'neutral'
     $ vmood = 'neutral'
+    if wonsh.done_with_minigame and flocto.done_with_minigame and lemurin.done_with_minigame:
+        jump ch1_s4
+    show bg waiting day with dissolve
     "Now whom should I chose next?"
-menu:
-    set menuset
-    "Wonsh":
-        jump ch1_s3_1
-    "Flockto":
-        jump ch1_s3_2
-    "Lumerin":
-        jump ch1_s3_3
-jump ch1_s4
+    call screen choose_animal
 
 label ch1_s3_3:
-    $ menuset.add("Lemurin")
     "The lemurin with bright orange fur quivers in pain."
     $ cmood = 'worried'
     $ vmood = 'worried'
@@ -331,9 +303,9 @@ label ch1_s3_3:
     "Lemurin's Owner" "Emilia was playing with another lemurin of mine in a tree, when she suddenly fell from the branch."
     "Lemurin's Owner" "Ever since then, she's been in a lot of pain and won't let even me touch her."
     c "Alright. I'll see what I can do."
+    jump fourth_minigame
 
-    "INSERT MINIGAME HERE"
-
+label ch1_s3_3a:
     $ cmood = 'happy'
     $ vmood = 'neutral'
     c "All done!"
@@ -342,22 +314,14 @@ label ch1_s3_3:
     $ vmood = 'happy'
     v "Excellent job!"
     c "Well, thank you!"
-
-    if len(menuset) > 3:
-        jump ch1_s4
     $ cmood = 'neutral'
     $ vmood = 'neutral'
+
+    if wonsh.done_with_minigame and flocto.done_with_minigame and lemurin.done_with_minigame:
+        jump ch1_s4
     show bg waiting day with dissolve
-    "I leave for the waiting room to see who's up next"
-menu:
-    set menuset
-    "Wonsh":
-        jump ch1_s3_1
-    "Flockto":
-        jump ch1_s3_2
-    "Lumerin":
-        jump ch1_s3_3
-jump ch1_s4
+    "I leave for the waiting room to see who's up next."
+    call screen choose_animal
 
 label ch1_s4:
     $ cmood = 'neutral'
@@ -373,28 +337,26 @@ label ch1_s4:
     $ vmood = 'happy'
     v "Another day of work successfully completed!"
 
-    # GRAB MINIGAME RESULTS LATER
-    # 1 for great, 0 for bad
-    $ minigameResult = 1
+    $ results = wonsh.incorrect + flocto.incorrect + lemurin.incorrect
 
-    if minigameResult > 0:
-        $ cmood = 'happy'
+    if results < 3:
+        voice "audio/minigame/voice/Scene 4/Catalina_055_take2.ogg"
         c "Today was a great day!"
-        "I can't help the bright smile that appears on my face. I love my job and it brings me a lot of satisfaction."
+        "I can’t help the bright smile that appears on my face. I love my job and it brings me a lot of satisfaction."
+        voice "audio/minigame/voice/Scene 4/Valencia_012_take1.ogg"
         v "Yes, and no major surgeries-"
         "Our happiness is interrupted by loud banging on the entrance door."
-        $ cmood = 'surprised'
-        $ vmood = 'surprised'
-        "It's past opening hours, but that's not the first time we find ourselves in this situation."
-        $ cmood = 'neutral'
-        "I can't say I'm surprised. Everything has gone too smoothly today."
+        "It’s past opening hours, but that’s not the first time we find ourselves in this situation."
+        "I can’t say I’m surprised. Everything has gone too smoothly today."
     else:
+        voice "audio/minigame/voice/Scene 4/Catalina_056_take1.ogg"
         c "Today could have been better, but at least we made no major mistakes."
-        "I smile at her softly. It certainly hasn't been the best day in the history of the clinic, but still, I love my job."
-        $ vmood = 'neutral'
+        "I smile at her softly. It certainly hasn’t been the best day in the history of the clinic, but still, I love my job."
+        voice "audio/minigame/voice/Scene 4/Valencia_013_take2.ogg"
         v "Yes, and no major surgeries-"
-        "Our conversation is interrupted by loud banging on the entrance door. It's past opening hours, but that's not the first time we find ourselves in this situation."
-        "I can't say I'm surprised."
+        "Our conversation is interrupted by loud banging on the entrance door."
+        "It’s past opening hours, but that’s not the first time we find ourselves in this situation."
+        "I can’t say I’m surprised."
 
     $ cmood = 'worried'
     c "You might have said that too soon."
@@ -644,16 +606,12 @@ label ch1_s7:
     v "Yes!"
     "We carefully move the patient from the stretcher to the surgery table."
 
-    # MINIGAME
-    scene black with fade
-    " INSERT SCENE 7 MINIGAME"
+    jump fifth_minigame
 
+label ch1_s7a:
     $ cmood = 'sad'
     $ vmood = 'sad'
-    scene bg vet night
-    show valencia at right
-    show catalina at left
-    with fade
+    show bg vet night with dissolve
 
     "We try everything we can. Hours pass by. Whenever we manage to heal a wound, it opens again."
     $ cmood = 'angry'

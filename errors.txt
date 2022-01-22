@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/chapters/ch1_s8-12.rpy", line 281: expected 'image_name_component' not found.
-    show 
+File "game/minigame.rpy", line 550: expected ':' not found.
+    else if minigame_animal == "wonsh":
          ^
 
-Ren'Py Version: Ren'Py 7.4.4.1439
-Sun Jan 16 11:52:42 2022
+File "game/minigame.rpy", line 553: expected statement.
+    else if minigame_animal == "flocto":
+         ^
+
+File "game/minigame.rpy", line 556: expected statement.
+    else if minigame_animal == "lemurin":
+         ^
+
+File "game/minigame.rpy", line 559: expected statement.
+    else:
+        ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Sat Jan 22 13:45:14 2022
