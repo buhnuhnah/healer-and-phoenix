@@ -7,3 +7,4 @@ init python:
 
     config.searchpath.extend(["game/audio", "game/images/backgrounds"])
     centerTextbox = False
+    renpy.music.set_volume(0.6, channel="music")

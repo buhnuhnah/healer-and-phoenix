@@ -3,7 +3,7 @@ label ch1_s8:
     scene bg waiting night
     show catalina at flipCenter
     with fade
-
+    play music "mystery.ogg" fadein 1.0
     "I look out of the window to see the moon shining brightly in the sky."
     "It's the middle of the night! Is it okay to wake up Diedriech now?"
     "But... My patient doesn't exactly have much time left and if Diedriech could portal to Zalila, it would only take a few hours."
@@ -12,10 +12,12 @@ label ch1_s8:
     "I approach the large standing mirror with its complicated ornaments that hide the magical formulas for long-distance communication."
     c "Here goes nothing..."
     "I place my hand on the mirror's surface and think hard about Diedriech - his appearance when I last saw him, his location."
+    play sound "sfx/channeling_magic.ogg"
     "Then I channel my magic into the device."
     "I wait for a bit ... hoping he'll answer."
 
     scene cg diedriech with fade
+    play sound "sfx/magical_appearance_Diedriech.ogg"
     pause 0.5
 
     "When I finally see his face, those handsome features I haven't seen in so many months, I feel a wave of relief hit me."
@@ -46,7 +48,7 @@ label ch1_s8:
     scene bg waiting night
     show catalina at flipRight
     with fade
-
+    play sound "sfx/magical_disappearance.ogg"
     "He takes his hand away from the mirror."
     "The familiar sight of Diedriech's face disappears and one again I'm alone in the waiting room."
     "He agreed to help me, without even knowing why I called."
@@ -76,6 +78,7 @@ label ch1_s8:
 
 label ch1_s9:
     scene bg wasteland dream with Fade(0.7, 0.5, 0.5)
+    play sound "sfx/wasteland_amb_loop.ogg" loop
     "I see a desolate landscape in front of me. The area is mountainous... or are they volcanoes?"
     $ cmood = 'surprised'
     $ emood = 'happy'
@@ -111,6 +114,7 @@ menu:
         jump ch1_s9_3
 
 label ch1_s9_2:
+    play music "gently foreboding.ogg" loop
     $ cmood = 'neutral'
     "I feel like a small insect in front of a large animal. I fear it could squash me at any moment."
     "I better act like I'm in front of a king."
@@ -127,6 +131,7 @@ label ch1_s9_2:
     jump ch1_s9_4
 
 label ch1_s9_3:
+    play music "gently foreboding.ogg" loop
     "I feel fascinated with this mysterious being that must have seen so much in life."
     "Oh, the stories he could tell, the events he must have seen. Amazing."
     $ emood = 'sad'
@@ -153,6 +158,7 @@ label ch1_s9_4:
     $ emood = 'sad'
     e "Great evil is coming to this land and I-"
     scene white with Fade(0.25, 0.0, 0.25)
+    stop sound fadeout 2.0
     v "Cat! Cat! Wake up!"
     d "Catalina..."
     jump ch1_s10
@@ -167,6 +173,8 @@ label ch1_s10:
     show diedriech at flipLeft
     show catalina at flipRight
     with fade
+    play music "general drama.ogg" loop
+
     v "Diedriech is here. We need to get on with the healing."
     "I look at them, confused for a moment."
     "I felt like the phoenix was trying to tell me something important, but they woke me up from that dream...I remember it so vividly."
@@ -262,6 +270,8 @@ label ch1_s11:
     scene bg vet sunset
     with fade
 
+    play music "happy at work.ogg" loop
+
     "It takes us the whole day to heal the phoenix. Before I realize it, the sun is setting once again."
     "We used all of our magical power but the operation is a success. I feel like I could collapse at any moment."
     "I look around. Valencia is sitting on the floor, sleeping."
@@ -286,6 +296,7 @@ label ch1_s11:
     d "It really means a lot to me that you-"
     $ dmood = 'surprised'
     $ cmood = 'surprised'
+    play sound "sfx/knocking1.ogg"
     "Our awkward conversation is interrupted by a knock on the clinic's front door."
     c "Who in the world...?!"
     d "Don't go! The clinic is closed. We put up the sign. You don't need..."
@@ -299,6 +310,8 @@ label ch1_s12:
     show diedriech at right
     with dissolve
     "But before Diedriech can stop me, I'm already at the entrance door."
+    play sound "sfx/knocking2.ogg"
+    queue sound "sfx/door_open.ogg"
     "The knock repeats. I unlock the door."
     $ mmood = 'surprised'
     $ gmood = 'happy'
@@ -489,6 +502,7 @@ label ch1_s12_5:
     show catalina at flipCenter
     show valencia at right
     with move
+    play sound "sfx/door_closes.ogg"
     "We say our goodbyes and Maximiano leaves."
     $ dmood = 'neutral'
     $ vmood = 'neutral'
@@ -510,6 +524,7 @@ label ch1_s12_5:
     d "Me too, I feel like I could collapse any moment."
 
     scene bg waiting night with fade
+    stop music fadeout 6.0
     "We close the clinic and go upstairs. Diedriech and Valencia each take one of the free rooms and I go to mine."
     "All I can do is take off my clothes. I don't even have it in me to freshen up."
     "As soon as I collapse on the bed, I fall asleep."

@@ -197,12 +197,11 @@ screen minigame(animal, dramatic_music=False):
     predict False
 
     on "show":
-        action If(dramatic_music, true=Play("music", "audio/music/HaP_-_General_Drama_Complete_LOOP_1.30.811.ogg"), false=Play("music", "audio/music/HaP_-_Minigame_Mayhem_Demo_Complete_LOOP_8.000.ogg"))
+        action If(dramatic_music, true=Play("music", "general drama.ogg"), false=Play("music", "minigame mayhem.ogg"))
     on "replace":
-        action If(dramatic_music, true=Play("music", "audio/music/HaP_-_General_Drama_Complete_LOOP_1.30.811.ogg"), false=Play("music", "audio/music/HaP_-_Minigame_Mayhem_Demo_Complete_LOOP_8.000.ogg"))
+        action If(dramatic_music, true=Play("music", "general drama.ogg"), false=Play("music", "minigame mayhem.ogg"))
     on "replaced":
-        action If(dramatic_music, true=Play("music", "audio/music/HaP_-_General_Drama_Complete_LOOP_1.30.811.ogg"), false=Play("music", "audio/music/HaP_-_Minigame_Mayhem_Demo_Complete_LOOP_8.000.ogg"))
-
+        action If(dramatic_music, true=Play("music", "general drama.ogg"), false=Play("music", "minigame mayhem.ogg"))
     default holding = ""
     default items = [
         ["herbs", 725, -2],

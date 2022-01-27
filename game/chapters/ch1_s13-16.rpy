@@ -1,4 +1,6 @@
 label ch1_s13:
+    stop music fadeout 1.0
+    stop sound fadeout 1.0
     scene black with fade
     "I thought my night would be dreamless, after a long tiring day of work."
     "But images still come to me, and again I'm aware that I'm dreaming."
@@ -31,12 +33,14 @@ menu:
         jump ch1_s13_edmundo
 
 label ch1_s13_max:
+    play music "romance.ogg" loop
     $ maxwithG = False
     $ mmood = 'happy'
     show max at flipLeft with dissolve
     m "Miss Catalina!"
     "I see Maximiano in front of me. He's alone and looks happy to see me."
     show bg road day dream with dissolve
+    play sound "sfx/forest_amb_daylight_loop.ogg" loop
     $ cmood = 'surprised'
     c "Whoa!"
     "The scenery changes, surprising me. We are in the same forest but in broad daylight."
@@ -67,11 +71,13 @@ label ch1_s13_max:
     m "Miss Catalina..."
     "There's longing in his voice. I look up in his eyes and he leans down to me and..."
     $ cmood = 'surprised'
+    stop music fadeout 6.0
     "Wait! What exactly am I dreaming about?!"
     "I'm so shocked I wake up."
     jump ch1_s14
 
 label ch1_s13_diedriech:
+    play music "romance.ogg" loop
     $ dmood = 'shy'
     show diedriech at flipLeft with dissolve
     d "Catalina..."
@@ -111,10 +117,12 @@ label ch1_s13_diedriech:
     d "Catalina..."
     show diedriech at flipCenter with move
     "Diedriech walks towards me, his hand outstretched as if he wants to touch my face."
+    stop music fadeout 6.0
     "But I'm not ready for this so I force myself to wake up."
     jump ch1_s14
 
 label ch1_s13_edmundo:
+    play music "romance.ogg" loop
     $ emood = 'happy'
     show edmundo at flipLeft with dissolve
     e "Catalina!"
@@ -139,6 +147,7 @@ label ch1_s13_edmundo:
     "I blush even harder. Compliments about how good I am at healing animals are something I very much like to hear."
     $ cmood = 'neutral'
     show catalina
+    stop music fadeout 6.0
     "But wait... I'm dreaming. Is Edmundo just saying what I want to hear? Do I want to hear it from him in particular?"
     "How vain must I be to want a centuries-old creature to compliment me."
     "Displeased, I force myself to wake up."
@@ -146,8 +155,10 @@ label ch1_s13_edmundo:
 
 label ch1_s14:
     scene white with dissolve
+    play sound "sfx/clock.ogg"
     "Ten minutes later the clock strikes eight in the morning."
 
+    play music "happy at work.ogg" loop
     $ dmood = 'neutral'
     $ cmood = 'neutral'
     show bg dining day
@@ -220,6 +231,7 @@ label ch1_s14:
 label ch1_s15:
     "We spend the day in the clinic talking and reorganizing things. The day goes by peacefully with no clients needing immediate healing."
     show bg vet sunset with dissolve
+    play sound "sfx/knocking1.ogg"
     "It's around four pm when we hear a knock on the door."
     $ dmood = 'angry'
     $ cmood = 'neutral'
@@ -235,6 +247,7 @@ label ch1_s15:
     $ mmood = 'neutral'
     $ gmood = 'neutral'
     show max at flipLeft with move
+    play sound "sfx/unlock_and_open_the_door.ogg"
     "I unlock the door and open it to see Maximiano with Graciella on the other side."
     if ch1_dream == 'max':
         $ mmood = 'shy'
@@ -279,8 +292,10 @@ label ch1_s15:
     $ gmood = 'happy'
     $ maxwithG = True
     m "Thank you, Miss Catalina."
+    stop music fadeout 6.0
     "Maximiano pays for the injection and Valencia takes the money from him. He turns to leave, but before he can..."
-    scene white with dissolve
+    play sound "sfx/magical transformation.ogg"
+    scene white with Dissolve(2.0)
     $ dmood, mmood, gmood, cmood, vmood = 'surprised', 'surprised', 'surprised', 'surprised', 'surprised'
     $ emood = 'neutral'
 
@@ -294,6 +309,7 @@ label ch1_s15:
     jump ch1_s16
 
 label ch1_s16:
+    play music "edmundo.ogg" fadein 1.0
     e "Wonderful to have you all here. Healer..."
     $ cmood = 'happy'
     show edmundo at right with move

@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame.rpy", line 550: expected ':' not found.
-    else if minigame_animal == "wonsh":
+File "game/chapters/ch1_s1-7.rpy", line 410: play requires a channel
+    play "<loop 1.30>general drama.ogg" fadein 1.0
          ^
-
-File "game/minigame.rpy", line 553: expected statement.
-    else if minigame_animal == "flocto":
-         ^
-
-File "game/minigame.rpy", line 556: expected statement.
-    else if minigame_animal == "lemurin":
-         ^
-
-File "game/minigame.rpy", line 559: expected statement.
-    else:
-        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sat Jan 22 13:45:14 2022
+Sun Jan 23 17:52:13 2022

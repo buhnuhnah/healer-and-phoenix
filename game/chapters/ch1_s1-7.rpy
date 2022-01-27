@@ -1,7 +1,7 @@
 label start:
     $ centerTextbox = False;
     scene bg wasteland with fade
-
+    play music "<loop 1.30>general drama.ogg" fadein 1.0
     voice "voice/start_48423cac.ogg"
     "The Oracle" "Once again the world is destroyed, ravaged by evil magic."
     "The Oracle" "How many times do you have to try, Phoenix, before you understand you can't save the world alone?"
@@ -20,9 +20,17 @@ label start:
     "Phoenix" "I understand, thank you for your help."
     "The Oracle" "Pray to the gods she finds you in time."
 
+    scene black with dissolve
+    play sound "sfx/time_travel.ogg"
+    show white with Dissolve(0.1)
+    pause 0.1
+    hide white with Dissolve(0.1)
+    pause 5
     jump ch1_s2
 
 label ch1_s2:
+    play sound "sfx/sudden_opening_of_the_door.ogg"
+    play music "happy at work.ogg" fadein 1.0 loop
     scene cg max with fade
     pause 0.75
     m "Healer! Graciella is sick! Please, help her!"
@@ -47,6 +55,7 @@ label ch1_s2:
     show max at left
     with fade
 
+    play sound "sfx/channeling_magic_into_crystal.ogg"
     "I put the last sample into the microscope and channel my magic into the crystal to power it."
     "This is how all our devices are powered."
     "Even the lights and kitchen appliances have crystal batteries that we have to switch out every two weeks."
@@ -66,9 +75,13 @@ label ch1_s2:
     c "I think I know what the problem is..."
 
     scene black with dissolve
+    stop music fadeout 1.0
+    play music "<loop 8>minigame.ogg" loop
     jump tutorial
 
 label ch1_s2a:
+    stop music fadeout 1.0
+    play music "happy at work.ogg" loop
     scene bg vet day
     show catalina at flipCenter
     show max at left
@@ -88,12 +101,14 @@ label ch1_s2a:
     $ mmood = 'happy'
     v "Good girl!"
     "Valencia hugs the purrbear to her. Graciella sounds like one happy purrbear. It makes me so pleased to see an animal be so joyful."
+    stop music fadeout 5
     m "You really are a wonderful healer, Miss Catalina..."
     "I look at Maximiano and smile brightly."
     $ mmood = 'surprised'
     m "Oh!"
     "He yelps, surprised."
     $ mmood = 'shy'
+    play music "goofy.ogg" fadein 1.0
     m "Wait...Did I... did I say that out loud...?!"
     "It makes me want to tease him."
     c "Yes. Yes, you did!"
@@ -187,6 +202,8 @@ label ch1_s2_5:
     v "The payment?"
     $ mmood = 'shy'
     m "Ah, right."
+    play sound "sfx/paying.ogg"
+    pause 1
     show max at offscreenleft with move
     "Maximiano pays for our service, then exits the room."
     if hugMax:
@@ -195,6 +212,7 @@ label ch1_s2_5:
         c "That he is."
         "We giggle happily like two schoolgirls."
         "What? There's nothing wrong with appreciating how handsome our clients are. After all, we're helping their pets, not them."
+    play music "happy at work.ogg" fadein 1.0
     "It's time for us to take on the next patient."
     c "I really love this job."
     "I say randomly, feeling very happy about healing another pet.."
@@ -210,7 +228,7 @@ label ch1_s3:
     show catalina at flipCenter
     show valencia at right
     with fade
-
+    play sound 'audio/sfx/clinic_loop.ogg'
     c "Now, who's next?"
     "I step into the waiting room of the clinic with a bright smile on my face."
     "I notice several pets with their owners, a colorful bunch waiting for me to solve their problems."
@@ -232,11 +250,13 @@ label ch1_s3_1:
     c "Before I take a look, could you tell me what happened?"
     "Wonsh's Owner" "My Mateo and I were playing catch in the fields."
     "Wonsh's Owner" "Suddenly Mateo hissed in pain and now he doesn't want to move on his own."
+    stop music fadeout 3.0
     c "Hmm..."
     "Time to put the wonsh under inspection then!"
     jump second_minigame
 
 label ch1_s3_1a:
+    play music "happy at work.ogg" loop fadein 1.0
     c "There, all done! Just don't let Mateo slither for a few days, so the wound can heal properly."
     "Wonsh's Owner" "Thank you, Miss Catalina!"
     "The wonsh's owner pays for our services and leaves the doctor's room with the happy pet in arms."
@@ -263,6 +283,7 @@ label ch1_s3_2:
     c "Tell me what happened."
     "Flockto's Owner" "Leonardo refuses to eat. Please do something about it."
     $ vmood = 'worried'
+    stop music fadeout 3.0
     "I hold back a sigh. She doesn't exactly give much information. I will have to work with it regardless."
     "The owner can be rude all she wants but what's important is to save the pet from suffering."
     jump third_minigame
@@ -270,6 +291,7 @@ label ch1_s3_2:
 label ch1_s3_2a:
     $ cmood = 'neutral'
     $ vmood = 'neutral'
+    play music "mystery.ogg" fadein 1.0 loop
     "Flockto's Owner" "Are they healed?"
     c "I took care of the worst of it, but please apply this medicine to Leonardo every day for the next four days."
     "Flockto's Owner" "If I must."
@@ -284,6 +306,7 @@ label ch1_s3_2a:
     "I sigh and walk out of the doctor's room."
     $ cmood = 'neutral'
     $ vmood = 'neutral'
+    play music "happy at work.ogg" loop
     if wonsh.done_with_minigame and flocto.done_with_minigame and lemurin.done_with_minigame:
         jump ch1_s4
     show bg waiting day with dissolve
@@ -301,6 +324,7 @@ label ch1_s3_3:
     "I can feel its pain just by looking at it."
     c "What happened?"
     "Lemurin's Owner" "Emilia was playing with another lemurin of mine in a tree, when she suddenly fell from the branch."
+    stop music fadeout 3.0
     "Lemurin's Owner" "Ever since then, she's been in a lot of pain and won't let even me touch her."
     c "Alright. I'll see what I can do."
     jump fourth_minigame
@@ -308,6 +332,7 @@ label ch1_s3_3:
 label ch1_s3_3a:
     $ cmood = 'happy'
     $ vmood = 'neutral'
+    play music "happy at work.ogg" fadein 1.0 loop
     c "All done!"
     "Lemurin's Owner" "Thank you, oh thank you, healer!"
     "The lemurin's owner pays for the services and leaves, thanking us multiple times."
@@ -328,10 +353,8 @@ label ch1_s4:
     $ valencia = 'neutral'
     "With no more pets to heal, Valencia and I take a break for lunch."
 
-    scene bg vet sunset
-    show catalina at left
-    show valencia at right
-    with fade
+    show bg vet sunset with dissolve
+    show catalina at left with move
 
     "Later that day, after we've already closed the clinic for the day, and started our clean-up routine, Valencia smiles at me brightly."
     $ vmood = 'happy'
@@ -341,21 +364,30 @@ label ch1_s4:
 
     if results < 3:
         voice "audio/minigame/voice/Scene 4/Catalina_055_take2.ogg"
+        $ cmood = 'happy'
         c "Today was a great day!"
         "I can’t help the bright smile that appears on my face. I love my job and it brings me a lot of satisfaction."
         voice "audio/minigame/voice/Scene 4/Valencia_012_take1.ogg"
         v "Yes, and no major surgeries-"
+        play sound "sfx/knocking1.ogg"
+        $ cmood = 'neutral'
+        $ vmood = 'neutral'
         "Our happiness is interrupted by loud banging on the entrance door."
         "It’s past opening hours, but that’s not the first time we find ourselves in this situation."
+        stop music fadeout 5.0
         "I can’t say I’m surprised. Everything has gone too smoothly today."
     else:
         voice "audio/minigame/voice/Scene 4/Catalina_056_take1.ogg"
+        $ cmood = 'sad'
         c "Today could have been better, but at least we made no major mistakes."
         "I smile at her softly. It certainly hasn’t been the best day in the history of the clinic, but still, I love my job."
         voice "audio/minigame/voice/Scene 4/Valencia_013_take2.ogg"
         v "Yes, and no major surgeries-"
+        play sound "sfx/knocking1.ogg"
+        $ cmood = 'neutral'
         "Our conversation is interrupted by loud banging on the entrance door."
         "It’s past opening hours, but that’s not the first time we find ourselves in this situation."
+        stop music fadeout 5.0
         "I can’t say I’m surprised."
 
     $ cmood = 'worried'
@@ -370,13 +402,15 @@ label ch1_s4:
     show valencia at right
     show catalina at flipCenter
     with move
-
+    play sound "sfx/knocking2.ogg"
     "I make my way to the entrance door, Valencia following me closely behind."
     "???" "Healer! We need your help!"
+    play sound "sfx/sudden_opening_of_the_door.ogg"
     "There is a panicked man wearing a hard hat and plaid shirt on the outside of the entrance."
     "A lumberjack? But I see no sick animal with him. Oh no, is this an emergency call?"
     $ cmood = 'neutral'
     c "I'm here. How can I help?"
+    play music "<loop 1.30>general drama.ogg" fadein 1.0
     "Lumberjack" "There's a burning bird in the forest just outside of town!"
     "Lumberjack" "We were working -  cutting trees and we found it there, lying there in a clearing!"
     "Lumberjack" "I swear we've done nothing! But it's on fire!"
@@ -397,6 +431,7 @@ label ch1_s4:
     v "On it!"
     show valencia at flip
     show valencia at offscreenright with move
+    play sound "sfx/leaving_and_closing_the_door.ogg"
     "Valencia leaves to prepare what we need to help our new patient."
     $ cmood = 'neutral'
     "It's time to try to calm down the man and get as much information out of him as I can."
@@ -458,6 +493,7 @@ label ch1_s4_4:
     "Lumberjack" "Of course, you're known as the best animal healer in town!"
     "I nod, happy that my fame is spreading. Though with great fame comes great responsibility, as I think I'm about to discover..."
     $ cmood = 'neutral'
+    show catalina
 menu:
     set menuset
     "Where is the patient exactly?":
@@ -473,6 +509,7 @@ label ch1_s4_5:
     $ cmood = 'neutral'
     show valencia at right with move
     show catalina at center with dissolve
+    play sound "sfx/door_open.ogg"
     "After a while, Valencia comes back, the stretcher flying behind her."
     v "I have everything you've requested."
     c "Then let's go! No time to waste!"
@@ -488,6 +525,10 @@ label ch1_s5:
     $ cmood = 'worried'
     show valencia
     show catalina
+
+    play music "gently foreboding.ogg" loop volume 1.0
+    play sound "sfx/forest_amb_afternoon_loop.ogg" loop
+
     "We follow the man on the road leading out of town and soon we enter the forest. The trees rustle and move in the wind gently."
     "Nothing seems to indicate something bad has happened here."
     v "So... what do you think it is?"
@@ -517,7 +558,6 @@ label ch1_s5:
     c "I was present once when a dragon was cured, but the only thing used back then was a lot of magic."
     c "And I really mean it when I say a lot of magic."
     c "They had to use a huge magical crystal and ten people had to channel healing magic through it."
-    $ cmood = 'surprised'
     c "Only then did the spell to have enough power to not burn out mid-way."
     $ vmood = 'sad'
     v "Oh no..."
@@ -531,9 +571,9 @@ label ch1_s5:
     c "There's one more thing worrying me..."
     v "Yes?"
     c "Why is a phoenix on the brink of death in the first place? What was strong enough to cause such an injury?"
+    $ vmood = 'neutral'
     "We stare at each other in grim silence. There's few animals I consider strong enough to cause harm to a phoenix..."
     "And the presence of any of them so close to human homes is worrying."
-    $ vmood = 'worried'
     v "I hope we'll be able to find out from the type of injuries it has."
     c "Indeed."
     "The lumberjack stops in front of us, and gestures to the left."
@@ -543,6 +583,7 @@ label ch1_s5:
     show catalina at rightish
     with move
     "We leave the road and enter the forest proper. After walking for a few minutes we hear the worried voices of multiple people."
+    play sound "sfx/campfire_loop.ogg" loop
     "A few steps more and we see a clearing with lumberjacks gathered around a campfire."
     show catalina at flipRightish with dissolve
     "Lumberjack" "The healer is here!"
@@ -553,12 +594,15 @@ label ch1_s5:
     jump ch1_s6
 
 label ch1_s6:
+    play sound "sfx/magical_aura_loop.ogg" loop
+    stop music fadeout 1.0
     scene cg phoenix with fade
     $ cmood = 'surprised'
     $ centerTextbox = True
     pause 0.5
     voice "voice/ch1_s6_cat1.ogg"
     c "By the gods!"
+    play music "edmundo sad.ogg" fadein 1.0
     "Shock paralyses me when I see the phoenix lying in the middle of the foliage."
     "Power is radiating off the creature -  a magnificent, fearsomely beautiful being."
     "I force myself to approach, knowing that even when hurt it could so easily kill me."
@@ -568,6 +612,8 @@ label ch1_s6:
     "There is also some sort of magic attached to its body. It's floating around the wounds, a dark shadow."
     "Curiosity overwhelming me, I put my finger into the swirling mass."
     $ cmood = 'pain'
+    show cg phoenix at shake_screen
+    play sound "sfx/magic_bite.ogg"
     c "Ow!"
     "Rather than a burn, it feels like a bite. But when I examine my hand there is no sign of injury. Did it bite my magical aura directly?"
     "For a moment I worry it might damage me somehow, but soon it stops hurting altogether."
@@ -591,10 +637,13 @@ label ch1_s6:
     "Lumberjack" "Understood. We'll help."
     "I direct the two men on how to grab the bird properly. In no time it's on our stretcher and we set it to floating again."
     "We say our goodbyes. The lumberjacks seem relieved that the problem is out of their hands now."
+    stop music fadeout 5.0
     "The stretcher floats behind it as we make our way back to the clinic."
+    stop sound fadeout 1.0
     jump ch1_s7
 
 label ch1_s7:
+    play music "general drama.ogg" fadein 1.0
     scene bg vet sunset
     show valencia at right
     show catalina at left

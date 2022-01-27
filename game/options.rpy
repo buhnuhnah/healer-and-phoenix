@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.5"
+define config.version = "1.6"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -52,6 +52,7 @@ define config.has_voice = True
 
 define config.auto_voice = "voice/{id}.ogg"
 define config.default_voice_volume = 1.0
+define config.debug_sound = True
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
@@ -153,6 +154,8 @@ define config.save_directory = "HealerandPhoenix-1638416987"
 ## The icon displayed on the taskbar or dock.
 
 define config.window_icon = "gui/window_icon.png"
+
+define config.rollback_enabled = False
 
 
 ## Build configuration #########################################################
