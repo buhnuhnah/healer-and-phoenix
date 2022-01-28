@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.6"
+define config.version = "1.7"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -155,7 +155,7 @@ define config.save_directory = "HealerandPhoenix-1638416987"
 
 define config.window_icon = "gui/window_icon.png"
 
-define config.rollback_enabled = False
+define config.rollback_enabled = True
 
 
 ## Build configuration #########################################################

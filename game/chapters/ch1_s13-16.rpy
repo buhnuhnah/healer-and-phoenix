@@ -11,6 +11,7 @@ label ch1_s13:
     scene bg road sunset dream
     show catalina at center
     with fade
+    play sound "sfx/forest_amb_afternoon_loop.ogg" loop
     "I'm walking through the forest again, following the road I was on the other day."
     "It seems to be dusk, the sun setting through the foliage."
     "???" "Catalina!"
@@ -158,7 +159,7 @@ label ch1_s14:
     play sound "sfx/clock.ogg"
     "Ten minutes later the clock strikes eight in the morning."
 
-    play music "happy at work.ogg" loop
+    play music "sleepy.ogg" loop
     $ dmood = 'neutral'
     $ cmood = 'neutral'
     show bg dining day
@@ -218,9 +219,11 @@ label ch1_s14:
     show valencia at right
     with fade
 
+    stop music fadeout 1.0
     "With the dishes cleaned up, we go down to the clinic."
     "Edmundo is sleeping peacefully on the surgery table. We change his bandages to see that his wounds are already healed nicely."
     $ dmood = 'happy'
+    play music "happy at work.ogg" fadein 1.0 loop
     d "Great job."
     $ cmood = 'happy'
     c "It's all due to the fact that we worked on the healing together."
@@ -339,7 +342,7 @@ label ch1_s16:
     $ emood = 'surprised'
     e "Ah, so you didn't know?"
     $ emood = 'neutral'
-    e "This is Maximiano Rosario, the Prince of the Kingdom of Girasol and the heir to the throne."
+    e "This is Maximiano Rozario, the Prince of the Kingdom of Girasol and the heir to the throne."
     "I continue to stare at Maximiano with my mouth gaping."
     c "Why did you not tell me?!"
     m "I prefered the anonymity of just being Maximiano to you."

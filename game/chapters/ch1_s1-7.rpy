@@ -2,6 +2,7 @@ label start:
     $ centerTextbox = False;
     scene bg wasteland with fade
     play music "<loop 1.30>general drama.ogg" fadein 1.0
+    play sound "sfx/wasteland_amb_loop.ogg" loop fadein 1.0
     voice "voice/start_48423cac.ogg"
     "The Oracle" "Once again the world is destroyed, ravaged by evil magic."
     "The Oracle" "How many times do you have to try, Phoenix, before you understand you can't save the world alone?"
@@ -76,7 +77,6 @@ label ch1_s2:
 
     scene black with dissolve
     stop music fadeout 1.0
-    play music "<loop 8>minigame.ogg" loop
     jump tutorial
 
 label ch1_s2a:
@@ -96,10 +96,13 @@ label ch1_s2a:
     "Before the pet notices anything, I inject it."
     $ cmood = 'happy'
     c "There, all done!"
+    play sound "sfx/Gracie_purring.ogg"
     "Graciella makes purring sounds, trying to get Valencia to pet her."
     $ vmood = 'happy'
     $ mmood = 'happy'
     v "Good girl!"
+    play sound "sfx/Gracie_happy.ogg"
+    $ gmood = 'happy'
     "Valencia hugs the purrbear to her. Graciella sounds like one happy purrbear. It makes me so pleased to see an animal be so joyful."
     stop music fadeout 5
     m "You really are a wonderful healer, Miss Catalina..."
@@ -128,6 +131,7 @@ menu:
 label ch1_s2_2:
     show catalina at rightish with move
     "I approach Valencia, who has Graciella in her arms, and hug them both."
+    play sound "sfx/Gracie_happy.ogg"
     "Graciella seems to be happy with being between the two of us."
     $ mmood = 'shy'
     m "...how sweet."
@@ -176,7 +180,7 @@ label ch1_s2_3:
     show valencia at center
     show catalina at flipRight
     with move
-
+    $ gmood = 'neutral'
     "Valencia approaches us with Graciella in her arms. She hands the pet over to Maximiano."
     jump ch1_s2_5
 
@@ -237,7 +241,7 @@ label ch1_s3:
 
 
 label ch1_s3_1:
-    "The navy-colored wonsh with the green underbelly is truly a beautiful creature."
+    "The green-colored wonsh with the green underbelly is truly a beautiful creature."
     "However, the red light in its head is dim, suggesting it must be in immense pain."
     c "Can the owner of the wonsh please come in?"
     "Wonsh's Owner" "Thank you, Healer!"
@@ -281,7 +285,7 @@ label ch1_s3_2:
     "The flockto's owner looks impatient as she enters the room, her pet floating in the air behind."
     show bg vet day with dissolve
     c "Tell me what happened."
-    "Flockto's Owner" "Leonardo refuses to eat. Please do something about it."
+    "Flockto's Owner" "Oh, Leonardo refuses to eat. Please do something about it."
     $ vmood = 'worried'
     stop music fadeout 3.0
     "I hold back a sigh. She doesn't exactly give much information. I will have to work with it regardless."
@@ -650,11 +654,11 @@ label ch1_s7:
     with fade
     $ cmood = 'worried'
     $ vmood = 'neutral'
-
     c "Let's lay the phoenix on the table."
     v "Yes!"
     "We carefully move the patient from the stretcher to the surgery table."
 
+    $ first_phoenix = True
     jump fifth_minigame
 
 label ch1_s7a:
@@ -668,7 +672,7 @@ label ch1_s7a:
     v "You're right. We need someone magically stronger than us to join us and help detach whatever that darkness is from the patient."
     "Someone magically stronger... but whom should I call? I'm stronger than all the other healers in town."
     $ vmood = 'neutral'
-    v "How about Die-"
+    v "How about Diedri-"
     c "No."
     "I answer quickly. I don't want to call on that person for any reason."
     $ cmood = 'neutral'

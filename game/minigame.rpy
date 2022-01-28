@@ -344,6 +344,9 @@ screen choose_animal():
                 action Jump("ch1_s3_3")
 
 label tutorial:
+    $ minigame_animal = 'graciella'
+    image failAnimal = "gui/minigame/pets/Graciella/graciella-sick.png"
+    image failBadge = "gui/minigame/badges/Graciella red sticker.png"
     show screen minigame_tutorial(graciella_purrbear)
 
     voice "audio/minigame/voice/tutorial/Catalina_005_take1.ogg"
@@ -466,6 +469,8 @@ label minigame_screen_label:
 
 label first_minigame:
     $ minigame_animal = 'graciella'
+    image failAnimal = "gui/minigame/pets/Graciella/graciella-sick.png"
+    image failBadge = "gui/minigame/badges/Graciella red sticker.png"
     hide screen minigame
     call screen minigame(graciella_purrbear)
     $ renpy.transition(dissolve)
@@ -480,6 +485,7 @@ label animal_choice:
 
 label second_minigame:
     $ minigame_animal = 'wonsh'
+    $ wonshMinigame = True
     $ renpy.transition(dissolve)
     call screen minigame(wonsh)
     $ renpy.transition(dissolve)
@@ -488,6 +494,8 @@ label second_minigame:
 
 label third_minigame:
     $ minigame_animal = 'flocto'
+    image failAnimal = "gui/minigame/pets/Flocto/pastel-sick.png"
+    image failBadge = "gui/minigame/badges/Flocto red sticker.png"
     $ renpy.transition(dissolve)
     call screen minigame(flocto)
     $ renpy.transition(dissolve)
@@ -496,6 +504,8 @@ label third_minigame:
 
 label fourth_minigame:
     $ minigame_animal = 'lemurin'
+    image failAnimal = "gui/minigame/pets/Lemurino/orange-sick.png"
+    image failBadge = "gui/minigame/badges/Lemurino red sticker.png"
     $ renpy.transition(dissolve)
     call screen minigame(lemurin)
     $ renpy.transition(dissolve)
@@ -526,6 +536,8 @@ label post_animal_choice:
 
 label fifth_minigame:
     $ minigame_animal = 'phoenix'
+    image failAnimal = "gui/minigame/pets/Phoenix/phoenix-sick.png"
+    image failBadge = "gui/minigame/badges/Phoenix red sticker.png"
     $ renpy.transition(dissolve)
     call screen minigame(phoenix)
     $ renpy.transition(dissolve)
@@ -534,6 +546,8 @@ label fifth_minigame:
 
 label sixth_minigame:
     $ minigame_animal = 'phoenix'
+    image failAnimal = "gui/minigame/pets/Phoenix/phoenix-sick.png"
+    image failBadge = "gui/minigame/badges/Phoenix red sticker.png"
     $ renpy.transition(dissolve)
     call screen minigame(phoenix_2, dramatic_music=True)
     $ renpy.transition(dissolve)
@@ -543,27 +557,56 @@ label sixth_minigame:
 label loss:
     $ renpy.transition(dissolve)
     hide screen minigame
-    scene bg forest day with fade
-    if minigame_animal == "graciella":
-        image failAnimal = "gui/minigame/pets/Graciella/graciella-sick.png"
-        image failBadge = "gui/minigame/badges/Graciella red sticker.png"
-    elif minigame_animal == "wonsh":
-        image failAnimal = "gui/minigame/pets/Wonsh/w1-sick.png"
-        image failBadge = "gui/minigame/badges/Wonsh red sticker.png"
-    elif minigame_animal == "flocto":
-        image failAnimal = "gui/minigame/pets/Flocto/pastel-sick.png"
-        image failBadge = "gui/minigame/badges/Flocto red sticker.png"
-    elif minigame_animal == "lemurin":
-        image failAnimal = "gui/minigame/pets/Lemurino/orange-sick.png"
-        image failBadge = "gui/minigame/badges/Lemurino red sticker.png"
-    else:
-        image failAnimal = "gui/minigame/pets/Phoenix/phoenix-sick.png"
-        image failBadge = "gui/minigame/badges/Phoenix red sticker.png"
+    scene bg road day with fade
+    if minigame_animal == 'graciella':
+        image failGracie = "gui/minigame/pets/Graciella/graciella-sick.png"
+        image gracieBadge = "gui/minigame/badges/Graciella red sticker.png"
 
-    show failAnimal at offscreenleft
-    show failAnimal at offscreenright with move
-    "Oh no! The injured animal escaped!"
-    show failBadge at trueCenter with dissolve
-    pause 1.0
-    scene black with dissolve
+        show failGracie at offscreenleft
+        show failGracie at offscreenright with MoveTransition(1.0)
+        "Oh no! The injured animal escaped!"
+        show gracieBadge at trueCenter with dissolve
+        pause 2.0
+        scene black with dissolve
+
+    elif wonshMinigame == True:
+        image failWonsh = "gui/minigame/pets/Wonsh/w1-sick.png"
+        image wonshBadge = "gui/minigame/badges/Wonsh red sticker.png"
+
+        show failWonsh at offscreenleft
+        show failWonsh at offscreenright with MoveTransition(1.0)
+        "Oh no! The injured animal escaped!"
+        show wonshBadge at trueCenter with dissolve
+        pause 2.0
+        scene black with dissolve
+        return
+
+    elif minigame_animal == 'flocto':
+        image failFlocto = "gui/minigame/pets/Flocto/pastel-sick.png"
+        image floctoBadge = "gui/minigame/badges/Flocto red sticker.png"
+
+        show failFlocto at offscreenleft
+        show failFlocto at offscreenright with MoveTransition(1.0)
+        "Oh no! The injured animal escaped!"
+        show floctBadge at trueCenter with dissolve
+        pause 2.0
+        scene black with dissolve
+
+    elif minigame_animal == 'lemurin':
+        image failLemurin = "gui/minigame/pets/Lemurino/orange-sick.png"
+        image lemurinBadge = "gui/minigame/badges/Lemurino red sticker.png"
+
+        show failLemurin at offscreenleft
+        show failLemuriin at offscreenright with MoveTransition(1.0)
+        "Oh no! The injured animal escaped!"
+        show lemurinBadge at trueCenter with dissolve
+        pause 2.0
+        scene black with dissolve
+
+    elif minigame_animal == 'phoenix':
+        if first_phoenix:
+            jump ch1_s7a
+        else:
+            jump ch1_s11
+
     return

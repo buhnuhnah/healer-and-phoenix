@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/chapters/ch1_s1-7.rpy", line 410: play requires a channel
-    play "<loop 1.30>general drama.ogg" fadein 1.0
-         ^
+File "game/minigame.rpy", line 610: expected 'label_name' not found.
+    jump
+        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sun Jan 23 17:52:13 2022
+Wed Jan 26 22:33:52 2022

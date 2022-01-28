@@ -1,4 +1,4 @@
-################################################################################
+ ################################################################################
 ## Initialization
 ################################################################################
 
@@ -1110,7 +1110,30 @@ screen confirm(message, yes_action, no_action):
                 action no_action
                 xpos 299
                 ypos 241
+    elif "overwrite your save" in message:
+        frame:
+            xysize (575, 412)
+            xalign 0.5
+            yalign 0.5
+            background Solid("#ffffff")
 
+            add "gui/confirm/load/frame_exit.png" xalign 0.5 yalign 0.5
+            text "Are you sure you want to overwrite your save?" font "gui/fonts/OpenSans-Regular.ttf" color "#383838" size 20 text_align 0.5 xalign 0.5 ypos 130
+
+            imagebutton:
+                idle "gui/confirm/load/yes.png"
+                hover "gui/confirm/load/yes_hover.png"
+
+                action yes_action
+                xpos 129
+                ypos 241
+            imagebutton:
+                idle "gui/confirm/load/no.png"
+                hover "gui/confirm/load/no_hover.png"
+
+                action no_action
+                xpos 299
+                ypos 241
     else:
         frame:
             background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
@@ -1526,6 +1549,69 @@ screen credit():
 
     text "Credits" size 50 font "gui/fonts/Satisfy-Regular.ttf" color "#383838" xalign 0.5 ypos 60
 
+    vpgrid:
+        xysize (1538, 714)
+        cols 1
+        draggable True
+        mousewheel True
+
+        xpos 390#192
+        ypos 164
+
+        vbox:
+
+            text "Publisher" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Playway" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Supervisors" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Tomasz Sosnowski and Maria Kozłowska of Hyper Studio" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Creative Director and Writer" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Anna ‘Lavinnia’ Kończak of Transparent Games" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Editor" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Eleanor Anwen" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Artists" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Paulina ‘Nokari’ Janusz" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Yui" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Joanna Moskwa" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Adam Biszewski" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Mariam Babunashvili" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "UI/UX Designer, Graphic Designer" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Mateusz Mazur" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Trailer" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Dan Stan" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Music" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Geoff Moore" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Sound Design" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Julia Konarczak" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Game Design" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Piotr Osińsk" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "M. Sal" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Programmers" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Dipesh Aggarwal" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Ana Nguyen" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            null height 20
+            text "Voice Actors" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Catalina - Savy Des-Etages" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Valencia, Flockto - Ginger Sue" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Maximiano - Nick Chang" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Diedriech - Brandon Jenkins" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Edmundo - Juwan Royal" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "The Oracle - Josh Portillo" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Lumberjack, Trailer Narrator, Animal Sounds - Rob Schwarb" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Flockto’s Owner - Jenna Rose Geiser" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Wonsh’s Owner, Extra - Ty Cocker" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Lemurin’s Owner - Shakyra Dunn" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+
+
     imagebutton:
         idle "gui/history/Back to menu.png"
         hover "gui/history/hover_Back to menu.png"
@@ -1549,3 +1635,66 @@ screen help():
         action Return()
         xpos 879
         ypos 903
+
+    vpgrid:
+        xysize (1538, 714)
+        cols 1
+        draggable True
+        mousewheel True
+
+        xpos 390#192
+        ypos 164
+
+        vbox:
+            spacing 10
+            xsize 1100
+            xalign 0.5
+
+            text "Keyboard" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            hbox:
+                label _("Enter ")
+                text _("Advances dialogue and activates the interface.")
+
+            hbox:
+                label _("Space ")
+                text _("Advances dialogue without selecting choices.")
+
+            hbox:
+                label _("Arrow Keys ")
+                text _("Navigate the interface.")
+
+            hbox:
+                label _("Escape ")
+                text _("Accesses the game menu.")
+
+            hbox:
+                label _("Ctrl ")
+                text _("Skips dialogue while held down.")
+
+            hbox:
+                label _("Tab ")
+                text _("Toggles dialogue skipping.")
+
+            hbox:
+                label _("Page Up ")
+                text _("Rolls back to earlier dialogue.")
+
+            hbox:
+                label _("Page Down ")
+                text _("Rolls forward to later dialogue.")
+
+            hbox:
+                label "H "
+                text _("Hides the user interface.")
+
+            hbox:
+                label "S "
+                text _("Takes a screenshot.")
+
+            hbox:
+                label "V "
+                text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+
+            hbox:
+                label "Shift+A "
+                text _("Opens the accessibility menu.")

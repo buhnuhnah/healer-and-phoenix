@@ -59,7 +59,7 @@ label ch1_s8:
     c "Yeah..."
     "I answer softly and shrug, not being able to comprehend what happened."
     c "He said he'll be here in four hours."
-    v "Great!"
+    v "Ah, great!"
     c "Get some rest, Val. Go home and sleep."
     $ vmood = 'worried'
     v "Only if you sleep too."
@@ -70,7 +70,7 @@ label ch1_s8:
 
     scene bg vet night with fade
     $ cmood = 'sad'
-    "As soon as Valencia leaves, I make my way back to the patient. I sit on the floor next to the phoenix, my back to the wall."
+    "As soon as Valencia leaves, I make my way back to the patient. I sit on the floor next to the phoenix, my back to the pillar."
     "I can't leave a creature that's in pain completely alone. How can I sleep while it is suffering because I failed to help it?"
     "But I'm too tired from the day's work and exhausted from using my magic."
     "I can barely keep my eyes open and I begin to doze off."
@@ -132,7 +132,7 @@ label ch1_s9_2:
 
 label ch1_s9_3:
     play music "gently foreboding.ogg" loop
-    "I feel fascinated with this mysterious being that must have seen so much in life."
+    "I feel fascinated with this mysterious individual that must have seen so much in life."
     "Oh, the stories he could tell, the events he must have seen. Amazing."
     $ emood = 'sad'
     e "I may seem to you like a wonderful being, but you should know that living for thousands of years is not easy."
@@ -270,10 +270,10 @@ label ch1_s11:
     scene bg vet sunset
     with fade
 
-    play music "happy at work.ogg" loop
+    play music "sleepy.ogg" loop fadein 1.0
 
     "It takes us the whole day to heal the phoenix. Before I realize it, the sun is setting once again."
-    "We used all of our magical power but the operation is a success. I feel like I could collapse at any moment."
+    "We used all of our magical power but the surgery is a success. I feel like I could collapse at any moment."
     "I look around. Valencia is sitting on the floor, sleeping."
     "She couldn't keep up until the end so I told her to rest, but she didn't leave my side."
     show diedriech at flipLeft
@@ -296,6 +296,7 @@ label ch1_s11:
     d "It really means a lot to me that you-"
     $ dmood = 'surprised'
     $ cmood = 'surprised'
+    show catalina
     play sound "sfx/knocking1.ogg"
     "Our awkward conversation is interrupted by a knock on the clinic's front door."
     c "Who in the world...?!"
@@ -319,6 +320,7 @@ label ch1_s12:
     show max at left with dissolve
     m "Ah...!"
     "I see Maximiano with Graciella in his arms. One of Maximiano's arms is raised as if he wants to knock again."
+    play sound "sfx/Gracie_purring.ogg"
     "Graciella purrs in his arms happily, when she sees me."
     $ cmood = 'sad'
     "I sigh, feeling more exhausted than I did a moment ago."
@@ -344,6 +346,7 @@ label ch1_s12:
     d "Give me the pet, I will take care of it."
     $ gmood = 'angry'
     show max
+    play sound "sfx/Gracie_angry.ogg"
     "Graciella hisses when she sees Diedriech's outstretched hands."
     m "No! Graciella doesn't like just anybody to touch her!"
     d "Did you just call me 'just anybody'?! For your information I am-"
@@ -407,7 +410,7 @@ label ch1_s12_3:
     c "\"This stranger\" is a healer like me. He knows what he's doing."
     $ dmood = 'happy'
     show diedriech at flipCenter
-    "Diedriech looks at me with a happy smile. Maximiano looks as angry as his pet. It would be funny if I wasn't so tired."
+    "Diedriech glances at me with a happy smile. Maximiano looks as angry as his pet. It would be funny if I wasn't so tired."
 
     scene bg vet sunset
     show valencia at right
@@ -435,6 +438,7 @@ label ch1_s12_3:
     v "Graciella needs this injection."
     "Valencia passes the syringe along to Diedriech and he gives the injection."
     $ vmood = 'neutral'
+    play sound "sfx/Graciella_sad.ogg"
     "Graciella makes unhappy sounds throughout the process, but at least that distracts her from the jab."
     $ gmood = 'sad'
     show diedriech at leftish
