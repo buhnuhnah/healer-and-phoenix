@@ -1,5 +1,5 @@
 label start:
-    $ centerTextbox = False;
+    $ centerTextbox = False
     scene bg wasteland with fade
     play music "<loop 1.30>general drama.ogg" fadein 1.0
     play sound "sfx/wasteland_amb_loop.ogg" loop fadein 1.0
@@ -38,7 +38,7 @@ label ch1_s2:
     "I look up from the test I was doing on the microscope."
     "I see my long-term customer, Maximiano with his pet purrbear, Graciella in his arms."
     v "Hey! You shouldn't barge in here without knocking!"
-    "My best friend and assistant Valencia calls Maximiano out of his behavior."
+    "My best friend and assistant Valencia calls Maximiano out on his behavior."
     "Normally I call in the patients myself, or sometimes she does, when we're ready to take care of the next pet."
     m "But! Graciella is in pain!"
     "The pet's owner looks about to burst into tears. His purrbear really looks sick."

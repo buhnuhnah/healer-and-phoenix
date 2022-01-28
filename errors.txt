@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/minigame.rpy", line 610: expected 'label_name' not found.
-    jump
-        ^
+File "game/minigame.rpy", line 1: is not terminated with a newline. (Check strings and parenthesis.)
+    default graciella_purrbear = SickAnimal(
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Jan 26 22:33:52 2022
+Thu Jan 27 21:30:14 2022

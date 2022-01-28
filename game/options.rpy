@@ -13,7 +13,8 @@
 ## The _() surrounding the string marks it as eligible for translation.
 
 define config.name = _("Healer and Phoenix")
-
+define config.rollback_enabled = False
+define config.hard_rollback_limit = 0
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
@@ -23,7 +24,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.7"
+define config.version = "1.9"
 
 
 ## Text that is placed on the game's about screen. Place the text between the

@@ -438,7 +438,7 @@ label ch1_s12_3:
     v "Graciella needs this injection."
     "Valencia passes the syringe along to Diedriech and he gives the injection."
     $ vmood = 'neutral'
-    play sound "sfx/Graciella_sad.ogg"
+    play sound "audio/sfx/Gracie_sad.ogg"
     "Graciella makes unhappy sounds throughout the process, but at least that distracts her from the jab."
     $ gmood = 'sad'
     show diedriech at leftish

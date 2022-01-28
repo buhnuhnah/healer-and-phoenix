@@ -874,13 +874,13 @@ screen preferences():
 
                 add "gui/avatar/" + a_im + ".png"
                 add "gui/settings/" + t_im + ".png" xpos 120 ypos 20
-                imagebutton:
-                    idle "gui/settings/Icon metro-volume-mute-5.png"
-                    hover "gui/settings/Icon metro-volume-mute-5.png"
+                #imagebutton:
+                #    idle "gui/settings/Icon metro-volume-mute-5.png"
+                #    hover "gui/settings/Icon metro-volume-mute-5.png"
 
-                    action ToggleVoiceMute(v_tag)
-                    xpos 246
-                    ypos 31
+                #    action ToggleVoiceMute(v_tag)
+                #    xpos 246
+                #    ypos 31
 
                 bar:
                     xysize (300, 15)
@@ -1592,7 +1592,7 @@ screen credit():
             text "Julia Konarczak" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             null height 20
             text "Game Design" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
-            text "Piotr Osińsk" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Piotr Osiński" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             text "M. Sal" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             null height 20
             text "Programmers" color "#383838" size 30 bold True font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
@@ -1603,12 +1603,12 @@ screen credit():
             text "Catalina - Savy Des-Etages" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             text "Valencia, Flockto - Ginger Sue" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             text "Maximiano - Nick Chang" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
-            text "Diedriech - Brandon Jenkins" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Diedriech - Brandon P. Jenkins" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             text "Edmundo - Juwan Royal" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             text "The Oracle - Josh Portillo" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             text "Lumberjack, Trailer Narrator, Animal Sounds - Rob Schwarb" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
-            text "Flockto’s Owner - Jenna Rose Geiser" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
-            text "Wonsh’s Owner, Extra - Ty Cocker" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Graciella, Flockto’s Owner - Jenna Rose Geiser" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
+            text "Wonsh’s Owner, Extra - Ty Coker" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
             text "Lemurin’s Owner - Shakyra Dunn" color "#383838" size 40 font "gui/fonts/OpenSans-SemiBold.ttf" xalign 0.5
 
 

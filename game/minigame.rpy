@@ -2,7 +2,7 @@ default graciella_purrbear = SickAnimal(
                                 name="Graciella",
                                 image="Graciella/graciella",
                                 sickness=[
-                                    ["", [], []],
+                                    ["", ["Click on the vial of medicine, and then on Graciella to begin her treatment."], ["tutorial/CatalinaMinigame1"]],
                                     ["medicine", ["It seems Graciella has an upset stomach. She must have eaten something bad. Valencia please prepare the poltari medicine.", "Wait! She’s very bad at taking medicine through her mouth! She spits it out all the time! Isn’t there some other way to heal her?"], ["tutorial/Catalina_021_take1", "tutorial/Max_005_take1"]],
                                     ["syringe", ["I can give the medicine through injections, but you will need to return to the clinic for the next three days.", "That’s okay, please do that!"], ["tutorial/Catalina_022_take2", "tutorial/Max_006_take1"]]],
                                 healthy_sfx="gracie_happy",
@@ -192,6 +192,15 @@ init python:
             if self.correct == self.steps and self.text_token >= len(self.sickness[self.current-1][1]):
                 return True
             return False
+
+        @property
+        def reset(self):
+            self.correct = 0
+            self.incorrect = 0
+            self.current = 0
+            self.text_token = 0
+            self.last_sumbitted = ""
+            self.is_correct = False
 
 screen minigame(animal, dramatic_music=False):
     predict False
@@ -472,9 +481,12 @@ label first_minigame:
     image failAnimal = "gui/minigame/pets/Graciella/graciella-sick.png"
     image failBadge = "gui/minigame/badges/Graciella red sticker.png"
     hide screen minigame
+    $ quick_menu = False
+    $ graciella_purrbear.reset
     call screen minigame(graciella_purrbear)
     $ renpy.transition(dissolve)
     hide screen minigame_tutorial
+    $ quick_menu = True
     hide screen minigame
     jump ch1_s2a
 
@@ -486,9 +498,11 @@ label animal_choice:
 label second_minigame:
     $ minigame_animal = 'wonsh'
     $ wonshMinigame = True
+    $ quick_menu = False
     $ renpy.transition(dissolve)
     call screen minigame(wonsh)
     $ renpy.transition(dissolve)
+    $ quick_menu = True
     hide screen minigame
     jump ch1_s3_1a
 
@@ -496,9 +510,11 @@ label third_minigame:
     $ minigame_animal = 'flocto'
     image failAnimal = "gui/minigame/pets/Flocto/pastel-sick.png"
     image failBadge = "gui/minigame/badges/Flocto red sticker.png"
+    $ quick_menu = False
     $ renpy.transition(dissolve)
     call screen minigame(flocto)
     $ renpy.transition(dissolve)
+    $ quick_menu = True
     hide screen minigame
     jump ch1_s3_2a
 
@@ -506,9 +522,11 @@ label fourth_minigame:
     $ minigame_animal = 'lemurin'
     image failAnimal = "gui/minigame/pets/Lemurino/orange-sick.png"
     image failBadge = "gui/minigame/badges/Lemurino red sticker.png"
+    $ quick_menu = False
     $ renpy.transition(dissolve)
     call screen minigame(lemurin)
     $ renpy.transition(dissolve)
+    $ quick_menu = True
     hide screen minigame
     jump ch1_s3_3a
 
@@ -538,30 +556,48 @@ label fifth_minigame:
     $ minigame_animal = 'phoenix'
     image failAnimal = "gui/minigame/pets/Phoenix/phoenix-sick.png"
     image failBadge = "gui/minigame/badges/Phoenix red sticker.png"
+    $ quick_menu = False
+    $ phoenix.reset
     $ renpy.transition(dissolve)
     call screen minigame(phoenix)
     $ renpy.transition(dissolve)
+    $ quick_menu = True
     hide screen minigame
     jump ch1_s7a
 
 label sixth_minigame:
+    $ first_phoenix = False
     $ minigame_animal = 'phoenix'
     image failAnimal = "gui/minigame/pets/Phoenix/phoenix-sick.png"
     image failBadge = "gui/minigame/badges/Phoenix red sticker.png"
+    $ quick_menu = False
+    $ phoenix_2.reset
     $ renpy.transition(dissolve)
     call screen minigame(phoenix_2, dramatic_music=True)
     $ renpy.transition(dissolve)
+    $ quick_menu = True
     hide screen minigame
     jump ch1_s11
 
 label loss:
     $ renpy.transition(dissolve)
     hide screen minigame
-    scene bg road day with fade
+    if minigame_animal == 'phoenix':
+        scene bg vet day with fade
+    else:
+        scene bg road day with fade
+
     if minigame_animal == 'graciella':
         image failGracie = "gui/minigame/pets/Graciella/graciella-sick.png"
         image gracieBadge = "gui/minigame/badges/Graciella red sticker.png"
 
+        "Do you want to try again?"
+
+        menu:
+            "Yes":
+                jump first_minigame
+            "No":
+                return
         show failGracie at offscreenleft
         show failGracie at offscreenright with MoveTransition(1.0)
         "Oh no! The injured animal escaped!"
@@ -569,7 +605,7 @@ label loss:
         pause 2.0
         scene black with dissolve
 
-    elif wonshMinigame == True:
+    elif minigame_animal == "wonsh":
         image failWonsh = "gui/minigame/pets/Wonsh/w1-sick.png"
         image wonshBadge = "gui/minigame/badges/Wonsh red sticker.png"
 
@@ -588,7 +624,7 @@ label loss:
         show failFlocto at offscreenleft
         show failFlocto at offscreenright with MoveTransition(1.0)
         "Oh no! The injured animal escaped!"
-        show floctBadge at trueCenter with dissolve
+        show floctoBadge at trueCenter with dissolve
         pause 2.0
         scene black with dissolve
 
@@ -597,7 +633,7 @@ label loss:
         image lemurinBadge = "gui/minigame/badges/Lemurino red sticker.png"
 
         show failLemurin at offscreenleft
-        show failLemuriin at offscreenright with MoveTransition(1.0)
+        show failLemurin at offscreenright with MoveTransition(1.0)
         "Oh no! The injured animal escaped!"
         show lemurinBadge at trueCenter with dissolve
         pause 2.0
@@ -605,8 +641,24 @@ label loss:
 
     elif minigame_animal == 'phoenix':
         if first_phoenix:
+            if phoenix.incorrect > 2:
+                "Do you want to try again?"
+
+                menu:
+                    "Yes":
+                        jump fifth_minigame
+                    "No":
+                        return
+
             jump ch1_s7a
         else:
-            jump ch1_s11
+            if phoenix_2.incorrect > 2:
+                "Do you want to try again?"
+
+                menu:
+                    "Yes":
+                        jump sixth_minigame
+                    "No":
+                        return
 
     return
